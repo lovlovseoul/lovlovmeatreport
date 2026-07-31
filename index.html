@@ -108,6 +108,19 @@
   .term-kr{font-size:12.5px;color:var(--brown);font-weight:600;}
   .term-desc{font-size:13px;color:var(--ink-soft);line-height:1.55;}
   .term-example{margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);}
+
+  /* hover thumbnail preview for table creative names */
+  .name-hover{position:relative;cursor:help;border-bottom:1px dotted var(--ink-soft);}
+  .name-hover .hover-preview{
+    display:none;position:absolute;z-index:50;left:0;top:calc(100% + 8px);
+    width:140px;background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:6px;box-shadow:0 8px 24px rgba(26,29,41,.15);
+  }
+  .name-hover .hover-preview img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block;}
+  .name-hover:hover .hover-preview{display:block;}
+  @media (max-width:600px){
+    .name-hover .hover-preview{width:110px;}
+  }
   .term-example b{color:var(--ink);font-weight:600;}
 
   footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
@@ -173,7 +186,7 @@
     .type-badge{font-size:9.5px;padding:2px 6px;}
 
     /* tables: enable horizontal scroll instead of squeezing columns */
-    .table-panel{padding:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .table-panel{padding:6px;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;}
     table{font-size:12px;min-width:560px;}
     thead th{font-size:10px;padding:0 8px 8px;}
     tbody td{padding:9px 8px;}
@@ -480,12 +493,12 @@ const creatives = [
 
 // ---------- Daily table (7/29 only, approximate split) ----------
 const dailyTop = [
-["0727 AIR FLOW SET-UP 4:5 이미지 (1)",1142,54,4.73,18470,3.40],
-["0727 AIR FLOW SET-UP 4:5 이미지 (2)",1047,36,3.44,17889,4.38],
-["0727 ATTENTION PANTS 9:16 영상 (1)",950,41,4.32,16538,6.03],
-["0727 ATTENTION PANTS 9:16 영상 (2)",966,30,3.11,14939,null],
-["에어플로우셋업_0720(1)",638,35,5.49,14397,2.91],
-["에어플로우_투박한바람막이",689,49,7.11,9916,4.13],
+["0727 AIR FLOW SET-UP 4:5 이미지 (1)",1142,54,4.73,18470,3.4,"https://scontent-atl3-3.xx.fbcdn.net/v/t45.1600-4/756518029_122143911747089394_3641316481094934446_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=kIqK4N02cHQQ7kNvwFCqCV8&_nc_oc=AdqIHifG4TKciQOiFUV62XzWJe6NE-C8U1p57_aGJusd-yzSdb6U0Vzg21uJAS5Fo2M&_nc_zt=1&_nc_ht=scontent-atl3-3.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQES3hpfUSqZTXg9H4G7DkhjueqHcvgU1kpXzlATqM-7e1TRnkcLmxre4qLm4DBsJAE8a-L_ojov9w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGSjTpwbWUDvDaBONZISQnp2Vj1jE4fJNUaB3ZFABeXqw&oe=6A708E83"],
+["0727 AIR FLOW SET-UP 4:5 이미지 (2)",1047,36,3.44,17889,4.38,"https://scontent-atl3-1.xx.fbcdn.net/v/t45.1600-4/758835266_122143911477089394_5813590701601279511_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=PyIkrwM0WjMQ7kNvwG740ev&_nc_oc=AdqMN0wzwLxhTO47rCDuLfc_mhqhKfoyeddtplVg2CWFjG9INIDNIiPeB8q-rlL7ays&_nc_zt=1&_nc_ht=scontent-atl3-1.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQGWivUCuntc7BWellR3XPKRDFw88T4ljJlemkmL7n3Sxru41rrL0MrbdO_7axujE5-C-JwHiv8Bmw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQEWVBRpJaPwgcVkau3qDKo6H8Ho6TtBHs1XApdFbFIRuA&oe=6A70830B"],
+["0727 ATTENTION PANTS 9:16 영상 (1)",950,41,4.32,16538,6.03,"https://scontent-atl3-3.xx.fbcdn.net/v/t15.5256-10/759252344_1717635109357077_5606103433042649096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=jRfEcKvN7SQQ7kNvwGksbP3&_nc_oc=AdqmquUGqT0x2h89TEa5YEXd4yiq3YhySBpf5eYBwW3oPf9d74qjcRuTyA7Iz0jBuxg&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQF6v6LBpmugVpfhr-TcmOAAR_UfaKSE2_0wuO_g5s1chIhkvKkHo3elBR-TPE8EQSGUL6jrJZPVJg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQF-srtOEblE5kSXd5ecBNI0a1SPtSgbH2fuEWqb3zuPig&oe=6A70ADD3"],
+["0727 ATTENTION PANTS 9:16 영상 (2)",966,30,3.11,14939,null,"https://scontent-atl3-3.xx.fbcdn.net/v/t15.5256-10/755151826_1939260920111191_3276132279754017170_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=pGkrUOjMepUQ7kNvwF__XXZ&_nc_oc=Adoe5vgP71yM7i09nYO-S8pHr-y56wI4xqZMh3fERAklhY3jQLqVEOK8Rgyh1o_HkPI&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQHLtA9x2FjxeW4cjfUaquJChUKU-kAQxFhUX457xB-KOGQXLh2aOO0B6zLdYD12SjkgD2LjuLmW2w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQEWe_eQXQSBJU7OTcf7Pizx6SDvuD3AAfHfB-8URlY9Yg&oe=6A70A0BE"],
+["에어플로우셋업_0720(1)",638,35,5.49,14397,2.91,"https://scontent-atl3-2.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=qewZSAwj8CkQ7kNvwH4u-Az&_nc_oc=Adq2TpHUll7HuxlZKUybO9-d7kDKk9Djm_WuiYqssuktcqPAF9D826iFPLgD16UgWx0&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQEOA_Nt9dAvwt1TNTBfEGGlCSeA2jsfXX9CqF3vzCf3mY6uv_lCTktnovcrTmOQLEi1qXRR-QCEDQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_AQHA8VK-B3wvyHVQZ0UiIuLZOXfdmGwhfx3rUBrshFy-DQ&oe=6A70B3C2"],
+["에어플로우_투박한바람막이",689,49,7.11,9916,4.13,"https://external-atl3-1.xx.fbcdn.net/emg1/v/t13/13733550255160339912?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKSm7e2ybj16g0OIITLpu6rZ0gp7gFqdr6CY-sloqICs4w99mh89mwxpt__RXH8POQ7P7nnmJJNxSO-OvRvK4J57H5La6BG2BFZ0n_jR46bOxJgAR0aZj7jXu0nT14YUMy4ZNv0DxkA-DmdQV12mY1r&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_oc=Adpn7bLEHQFo6DD6X_lJz7VWH-6ZGQ6rpIuUXEcDPQX0OGf58mYyA6s5iY0v9Qo-TxM&ccb=13-1&oh=06_Q3_BAQcmTAb0X7UoHjUWqNgsgp7JsP4it7fBF999yhwn1kOD&oe=6A6CB515&_nc_sid=58080a"],
 ];
 
 function fillTable(id, rows, withCpm){
@@ -493,20 +506,26 @@ function fillTable(id, rows, withCpm){
   rows.forEach(r=>{
     const tr = document.createElement('tr');
     if(withCpm){
-      const [name,imp,clk,ctr,cpm,spend,roas] = r;
+      const [name,imp,clk,ctr,cpm,spend,roas,thumb] = r;
       const roasCell = roas != null ? `${roas.toFixed(2)}x` : '<span style="color:var(--ink-soft)">–</span>';
-      tr.innerHTML = `<td>${name}</td><td class="num">${imp.toLocaleString()}</td><td class="num">${clk.toLocaleString()}</td><td class="num">${ctr.toFixed(2)}%</td><td class="num">₩${cpm.toLocaleString()}</td><td class="num">₩${spend.toLocaleString()}</td><td class="num">${roasCell}</td>`;
+      const nameCell = thumb
+        ? `<span class="name-hover">${name}<span class="hover-preview"><img src="${thumb}" alt="${name}" loading="lazy"></span></span>`
+        : name;
+      tr.innerHTML = `<td>${nameCell}</td><td class="num">${imp.toLocaleString()}</td><td class="num">${clk.toLocaleString()}</td><td class="num">${ctr.toFixed(2)}%</td><td class="num">₩${cpm.toLocaleString()}</td><td class="num">₩${spend.toLocaleString()}</td><td class="num">${roasCell}</td>`;
     }else{
-      const [name,imp,clk,ctr,spend,roas] = r;
+      const [name,imp,clk,ctr,spend,roas,thumb] = r;
       const roasCell = roas != null ? `${roas.toFixed(2)}x` : '<span style="color:var(--ink-soft)">–</span>';
-      tr.innerHTML = `<td>${name}</td><td class="num">${imp.toLocaleString()}</td><td class="num">${clk.toLocaleString()}</td><td class="num">${ctr.toFixed(2)}%</td><td class="num">₩${spend.toLocaleString()}</td><td class="num">${roasCell}</td>`;
+      const nameCell = thumb
+        ? `<span class="name-hover">${name}<span class="hover-preview"><img src="${thumb}" alt="${name}" loading="lazy"></span></span>`
+        : name;
+      tr.innerHTML = `<td>${nameCell}</td><td class="num">${imp.toLocaleString()}</td><td class="num">${clk.toLocaleString()}</td><td class="num">${ctr.toFixed(2)}%</td><td class="num">₩${spend.toLocaleString()}</td><td class="num">${roasCell}</td>`;
     }
     tbody.appendChild(tr);
   });
 }
 fillTable('dailyTableBody', dailyTop, false);
 
-const weeklyRows = creatives.map(c=>[c.name,c.imp,c.clk,c.ctr,c.cpm,c.spend,c.roas]);
+const weeklyRows = creatives.map(c=>[c.name,c.imp,c.clk,c.ctr,c.cpm,c.spend,c.roas,c.thumb]);
 fillTable('weeklyTableBody', weeklyRows, true);
 
 // ---------- Creative grid ----------
