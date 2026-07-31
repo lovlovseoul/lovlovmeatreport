@@ -45,6 +45,10 @@
   .kpi-label{font-size:12.5px;color:var(--ink-soft);font-weight:500;margin-bottom:10px;}
   .kpi-value{font-family:'Noto Serif KR',serif;font-size:25px;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
   .kpi-sub{font-size:12px;color:var(--green);font-weight:600;margin-top:6px;}
+  .kpi-delta{display:inline-flex;align-items:center;gap:3px;font-size:11.5px;font-weight:700;margin-top:5px;}
+  .kpi-delta.up{color:var(--green);}
+  .kpi-delta.down{color:var(--red);}
+  .kpi-delta .vs{font-weight:500;color:var(--ink-soft);margin-left:2px;}
   .kpi-sub.warn{color:var(--red);}
 
   section{margin-bottom:32px;}
@@ -145,6 +149,7 @@
     .kpi-label{font-size:11px;margin-bottom:6px;}
     .kpi-value{font-size:19px;}
     .kpi-sub{font-size:10.5px;margin-top:4px;}
+    .kpi-delta{font-size:10px;margin-top:3px;}
 
     section{margin-bottom:22px;}
     .section-head{flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:10px;}
@@ -195,7 +200,7 @@
     <div class="eyebrow">LOVLOV · Performance Marketing</div>
     <h1>메타광고 대시보드</h1>
     <div class="meta-row">
-      <div class="meta-text">계정: 로브로브 (LOVLOV) · 마지막 갱신 <strong id="reportDate">2026년 7월 30일</strong></div>
+      <div class="meta-text">계정: 로브로브 (LOVLOV) · 마지막 갱신 <strong id="reportDate">2026년 7월 31일</strong></div>
     </div>
     <div class="tabs">
       <div class="tab active" data-view="daily">일간</div>
@@ -212,10 +217,10 @@
     <!-- ===== 일간 ===== -->
     <div class="view active" id="view-daily">
       <div class="kpi-grid">
-        <div class="kpi-card"><div class="kpi-label">전일 광고비 소진</div><div class="kpi-value">₩216,470</div><div class="kpi-sub">7/29 기준</div></div>
-        <div class="kpi-card"><div class="kpi-label">전일 노출수</div><div class="kpi-value">26,472</div><div class="kpi-sub">CPM 평균 ₩8,177</div></div>
-        <div class="kpi-card"><div class="kpi-label">전일 클릭수</div><div class="kpi-value">1,939</div><div class="kpi-sub">CTR 7.32%</div></div>
-        <div class="kpi-card"><div class="kpi-label">운영중 소재 수</div><div class="kpi-value">19개</div><div class="kpi-sub warn">에어플로우_투박한바람막이 최다 지출</div></div>
+        <div class="kpi-card"><div class="kpi-label">전일 광고비 소진</div><div class="kpi-value">₩213,355</div><div class="kpi-sub">7/30 기준</div><div class="kpi-delta down">▼ 1.4% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">전일 노출수</div><div class="kpi-value">21,287</div><div class="kpi-sub">CPM 평균 ₩10,023</div><div class="kpi-delta down">▼ 19.6% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">전일 클릭수</div><div class="kpi-value">1,599</div><div class="kpi-sub">CTR 7.51% (▲0.19%p)</div><div class="kpi-delta down">▼ 17.5% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">운영중 소재 수</div><div class="kpi-value">28개</div><div class="kpi-sub warn">에어플로우셋업 4:5 이미지 최다 지출</div></div>
       </div>
 
       <section>
@@ -227,7 +232,7 @@
       </section>
 
       <section>
-        <div class="section-head"><div class="section-title">전일 소재별 성과</div><div class="section-note">7/29 · 광고비 높은 순</div></div>
+        <div class="section-head"><div class="section-title">전일 소재별 성과</div><div class="section-note">7/30 · 광고비 높은 순</div></div>
         <div class="panel table-panel" style="padding:10px 8px;">
           <table>
             <thead><tr><th>소재</th><th class="num">노출수</th><th class="num">클릭수</th><th class="num">CTR</th><th class="num">광고비</th><th class="num">ROAS</th></tr></thead>
@@ -303,8 +308,9 @@
       </section>
 
       <section>
-        <div class="section-head"><div class="section-title">주차별 광고비 소진 추이</div><div class="section-note">7월 1주차 – 4주차</div></div>
-        <div class="panel"><div class="chart-wrap"><canvas id="monthlyChart" role="img" aria-label="7월 주차별 광고비 소진 막대그래프">1주차 3,120,450원, 2주차 3,850,200원, 3주차 4,415,410원, 4주차 5,583,835원</canvas></div></div>
+        <div class="section-head"><div class="section-title">주차별 광고비 소진 추이</div><div class="section-note">7월 1주차(6/29 시작) – 5주차</div></div>
+        <div class="panel"><div class="chart-wrap"><canvas id="monthlyChart" role="img" aria-label="7월 주차별 광고비 소진 막대그래프">1주차 2,921,601원, 2주차 3,509,385원, 3주차 3,546,722원, 4주차 5,994,259원, 5주차 1,971,110원</canvas></div></div>
+        <div class="section-note" style="margin-top:10px;">※ 주차는 월요일 시작 기준(1주차 6/29~7/5)이라 5주차(7/27~30, 4일)로 마감됩니다. 위 KPI의 "7월 광고비 소진"은 달력상 7/1~7/30 합계라 주차 합계(6/29~7/30, ₩17,943,077)와는 기준일이 달라 차이가 있습니다.</div>
       </section>
     </div>
 
@@ -474,12 +480,12 @@ const creatives = [
 
 // ---------- Daily table (7/29 only, approximate split) ----------
 const dailyTop = [
-["에어플로우_투박한바람막이 (7/29)",1327,95,7.16,24444,4.13],
-["[W컨셉] 0724 - 서머베일 가디건 4:5 이미지",1150,110,9.57,4696,null],
-["어텐션팬츠_애착바지 (누적치 참고)",2305,67,2.91,39380,3.24],
-["0727 AIR FLOW SET-UP 4:5 이미지",1600,84,5.25,29318,3.40],
-["에어플로우셋업_0720(1)",455,31,6.81,10397,2.91],
-["[W컨셉] 0727 - 서머베일 가디건 4:5 이미지",1198,90,7.51,4547,null],
+["0727 AIR FLOW SET-UP 4:5 이미지 (1)",1142,54,4.73,18470,3.40],
+["0727 AIR FLOW SET-UP 4:5 이미지 (2)",1047,36,3.44,17889,4.38],
+["0727 ATTENTION PANTS 9:16 영상 (1)",950,41,4.32,16538,6.03],
+["0727 ATTENTION PANTS 9:16 영상 (2)",966,30,3.11,14939,null],
+["에어플로우셋업_0720(1)",638,35,5.49,14397,2.91],
+["에어플로우_투박한바람막이",689,49,7.11,9916,4.13],
 ];
 
 function fillTable(id, rows, withCpm){
@@ -560,8 +566,8 @@ lineChart('weeklyImpChart','일별 노출수',imps,'#3D7068');
 
 new Chart(document.getElementById('monthlyChart'), {
   type:'bar',
-  data:{labels:['1주차 (7/1-7/7)','2주차 (7/8-7/14)','3주차 (7/15-7/21)','4주차 (7/22-7/30)'],
-    datasets:[{label:'광고비',data:[3120450,3850200,4415410,5583835],backgroundColor:'#6B5842',borderRadius:4,maxBarThickness:60}]},
+  data:{labels:['1주차 (6/29-7/5)','2주차 (7/6-7/12)','3주차 (7/13-7/19)','4주차 (7/20-7/26)','5주차 (7/27-7/30)'],
+    datasets:[{label:'광고비',data:[2921601,3509385,3546722,5994259,1971110],backgroundColor:'#6B5842',borderRadius:4,maxBarThickness:60}]},
   options:{responsive:true,maintainAspectRatio:false,
     plugins:{legend:{display:false}},
     scales:{y:{grid:{color:'#E8E3D9'},ticks:{callback:v=>(v/1000000).toFixed(1)+'M',color:'#898781',font:{size:11}}},x:{grid:{display:false},ticks:{color:'#898781',font:{size:11}}}}}
