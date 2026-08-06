@@ -49,6 +49,18 @@
   .kpi-delta.up{color:var(--green);}
   .kpi-delta.down{color:var(--red);}
   .kpi-delta .vs{font-weight:500;color:var(--ink-soft);margin-left:2px;}
+
+  /* account summary strip */
+  .account-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+  .account-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;}
+  .account-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .account-name{font-family:'Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink);}
+  .account-status{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:100px;}
+  .account-status.live{background:var(--green-soft);color:var(--green);}
+  .account-status.idle{background:#EDEBE7;color:#6B6862;}
+  .account-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;font-size:12px;color:var(--ink-soft);}
+  .account-metrics b{display:block;color:var(--ink);font-size:15px;font-weight:700;font-family:'Noto Serif KR',serif;margin-top:2px;}
+  .account-note{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-soft);}
   .kpi-sub.warn{color:var(--red);}
 
   section{margin-bottom:32px;}
@@ -213,7 +225,7 @@
     <div class="eyebrow">LOVLOV · Performance Marketing</div>
     <h1>메타광고 대시보드</h1>
     <div class="meta-row">
-      <div class="meta-text">계정: 로브로브 (LOVLOV) · 마지막 갱신 <strong id="reportDate">2026년 8월 4일</strong></div>
+      <div class="meta-text">계정: 로브로브 (LOVLOV) · 마지막 갱신 <strong id="reportDate">2026년 8월 6일</strong></div>
     </div>
     <div class="tabs">
       <div class="tab active" data-view="daily">일간</div>
@@ -221,6 +233,8 @@
       <div class="tab" data-view="monthly">월간</div>
       <div class="tab" data-view="alltime">전체추이</div>
       <div class="tab" data-view="creatives">소재 라이브러리</div>
+      <div class="tab" data-view="wconcept">W컨셉 협력</div>
+      <div class="tab" data-view="cm29">29CM 협력</div>
       <div class="tab" data-view="glossary">용어 정리</div>
     </div>
   </header>
@@ -229,23 +243,58 @@
 
     <!-- ===== 일간 ===== -->
     <div class="view active" id="view-daily">
+      <div class="section-head"><div class="section-title">전체 계정 현황 (8/5 기준)</div><div class="section-note">운영중인 3개 광고 계정 한눈에 보기</div></div>
+      <div class="account-strip">
+        <div class="account-card">
+          <div class="account-card-head"><span class="account-name">로브로브 메인</span><span class="account-status live">집행중</span></div>
+          <div class="account-metrics">
+            <div>광고비<b>₩55,872</b></div>
+            <div>노출<b>5,309</b></div>
+            <div>클릭<b>393</b></div>
+            <div>소재 6개 운영</div>
+          </div>
+          <div class="account-note">전일 대비 광고비 ▼62.4% · 소재 정리 진행중</div>
+        </div>
+        <div class="account-card">
+          <div class="account-card-head"><span class="account-name">W컨셉 협력</span><span class="account-status live">집행중</span></div>
+          <div class="account-metrics">
+            <div>광고비<b>₩74,568</b></div>
+            <div>노출<b>11,881</b></div>
+            <div>클릭<b>926</b></div>
+            <div>소재 4개 운영</div>
+          </div>
+          <div class="account-note">8/5 첫 집행 · ~8/7 10시까지 트래픽 캠페인, 이후 할인율 재확인 후속 캠페인 대기중</div>
+        </div>
+        <div class="account-card" style="opacity:0.75;">
+          <div class="account-card-head"><span class="account-name">29CM 협력</span><span class="account-status idle">비활성</span></div>
+          <div class="account-metrics">
+            <div>광고비<b>₩0</b></div>
+            <div>노출<b>0</b></div>
+            <div>클릭<b>0</b></div>
+            <div>소재 4개 모두 정지</div>
+          </div>
+          <div class="account-note">데일리 브리즈 밴딩 팬츠 소재만 세팅, 집행 이력 없음</div>
+        </div>
+      </div>
+
+      <div class="section-head"><div class="section-title">로브로브 메인 상세</div><div class="section-note">전일(8/5) 기준</div></div>
       <div class="kpi-grid">
-        <div class="kpi-card"><div class="kpi-label">전일 광고비 소진</div><div class="kpi-value">₩222,494</div><div class="kpi-sub">8/3 기준</div><div class="kpi-delta down">▼ 17.0% <span class="vs">전일 대비</span></div></div>
-        <div class="kpi-card"><div class="kpi-label">전일 노출수</div><div class="kpi-value">19,290</div><div class="kpi-sub">CPM 평균 ₩11,534</div><div class="kpi-delta down">▼ 15.8% <span class="vs">전일 대비</span></div></div>
-        <div class="kpi-card"><div class="kpi-label">전일 클릭수</div><div class="kpi-value">1,308</div><div class="kpi-sub">CTR 6.78%</div><div class="kpi-delta down">▼ 28.1% <span class="vs">전일 대비</span></div></div>
-        <div class="kpi-card"><div class="kpi-label">운영중 소재 수</div><div class="kpi-value">23개</div><div class="kpi-sub warn">AIR FLOW SET-UP 소재군 최다 지출</div></div>
+        <div class="kpi-card"><div class="kpi-label">전일 광고비 소진</div><div class="kpi-value">₩55,872</div><div class="kpi-sub">8/5 기준</div><div class="kpi-delta down">▼ 62.4% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">전일 노출수</div><div class="kpi-value">5,309</div><div class="kpi-sub">CPM 평균 ₩10,524</div><div class="kpi-delta down">▼ 62.9% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">전일 클릭수</div><div class="kpi-value">393</div><div class="kpi-sub">CTR 7.40%</div><div class="kpi-delta down">▼ 65.6% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">운영중 소재 수</div><div class="kpi-value">6개</div><div class="kpi-sub warn">전일 대비 대규모 정지 지속 · 신규 4개 아직 지출 없음</div></div>
       </div>
 
       <section>
-        <div class="section-head"><div class="section-title">최근 7일 추이</div><div class="section-note">7/28 – 8/3</div></div>
+        <div class="section-head"><div class="section-title">최근 7일 추이</div><div class="section-note">7/30 – 8/5</div></div>
         <div class="two-col">
-          <div class="panel"><div class="chart-wrap"><canvas id="dailySpendChart" role="img" aria-label="일별 광고비 소진 막대그래프">7/28 432,467원부터 8/3 222,494원까지 일별 소진 추이</canvas></div></div>
-          <div class="panel"><div class="chart-wrap"><canvas id="dailyImpChart" role="img" aria-label="일별 노출수 라인그래프">7/28 42,225건부터 8/3 19,290건까지 일별 노출 추이</canvas></div></div>
+          <div class="panel"><div class="chart-wrap"><canvas id="dailySpendChart" role="img" aria-label="일별 광고비 소진 막대그래프">7/30 353,190원부터 8/5 55,872원까지 일별 소진 추이</canvas></div></div>
+          <div class="panel"><div class="chart-wrap"><canvas id="dailyImpChart" role="img" aria-label="일별 노출수 라인그래프">7/30 33,374건부터 8/5 5,309건까지 일별 노출 추이</canvas></div></div>
         </div>
       </section>
 
       <section>
-        <div class="section-head"><div class="section-title">전일 소재별 성과</div><div class="section-note">8/3 · 광고비 높은 순</div></div>
+        <div class="section-head"><div class="section-title">전일 소재별 성과</div><div class="section-note">8/5 · 광고비 높은 순</div></div>
         <div class="panel table-panel" style="padding:10px 8px;">
           <table>
             <thead><tr><th>소재</th><th class="num">노출수</th><th class="num">클릭수</th><th class="num">CTR</th><th class="num">광고비</th><th class="num">ROAS</th></tr></thead>
@@ -258,10 +307,10 @@
     <!-- ===== 주간 ===== -->
     <div class="view" id="view-weekly">
       <div class="kpi-grid kpi-grid-5">
-        <div class="kpi-card"><div class="kpi-label">주간 광고비 소진</div><div class="kpi-value">₩1,237,788</div><div class="kpi-sub">7/28–8/3 · ACTIVE 23개 소재</div></div>
-        <div class="kpi-card"><div class="kpi-label">주간 노출수</div><div class="kpi-value">106,409</div><div class="kpi-sub">CPM 평균 ₩11,632</div></div>
-        <div class="kpi-card"><div class="kpi-label">주간 클릭수</div><div class="kpi-value">8,015</div><div class="kpi-sub">CTR 7.53%</div></div>
-        <div class="kpi-card"><div class="kpi-label">주간 전체 ROAS</div><div class="kpi-value">2.80x</div><div class="kpi-sub">전환 미추적 소재 포함 전체 광고비 기준</div></div>
+        <div class="kpi-card"><div class="kpi-label">주간 광고비 소진</div><div class="kpi-value">₩212,450</div><div class="kpi-sub">7/30–8/5 · ACTIVE 6개 소재</div></div>
+        <div class="kpi-card"><div class="kpi-label">주간 노출수</div><div class="kpi-value">14,822</div><div class="kpi-sub">CPM 평균 ₩14,333</div></div>
+        <div class="kpi-card"><div class="kpi-label">주간 클릭수</div><div class="kpi-value">573</div><div class="kpi-sub">CTR 3.87%</div></div>
+        <div class="kpi-card"><div class="kpi-label">일시정지 소재</div><div class="kpi-value">21개</div><div class="kpi-sub warn">계정 재편 계속 진행중 (아래 표 참고)</div></div>
         <div class="kpi-card"><div class="kpi-label">주간 DB(회원가입)</div><div class="kpi-value">18건</div><div class="kpi-sub">인스타그램 채널 100% (7월 누적)</div></div>
       </div>
 
@@ -274,14 +323,14 @@
       </section>
 
       <section>
-        <div class="section-head"><div class="section-title">소재별 누적 성과</div><div class="section-note">7/28–8/3 합산 · 광고비 높은 순</div></div>
+        <div class="section-head"><div class="section-title">소재별 누적 성과</div><div class="section-note">ACTIVE는 7/30–8/5 · 일시정지는 마지막 확인된 집행 구간 기준</div></div>
         <div class="panel table-panel" style="padding:10px 8px;">
           <table>
-            <thead><tr><th>소재</th><th class="num">노출수</th><th class="num">클릭수</th><th class="num">CTR</th><th class="num">CPM</th><th class="num">광고비</th><th class="num">ROAS</th></tr></thead>
+            <thead><tr><th>소재</th><th class="num">노출수</th><th class="num">클릭수</th><th class="num">CTR</th><th class="num">CPM</th><th class="num">광고비</th><th class="num">상태</th></tr></thead>
             <tbody id="weeklyTableBody"></tbody>
           </table>
         </div>
-        <div class="section-note" style="margin-top:10px;">※ ROAS "–"는 해당 소재가 랜딩페이지뷰 등 구매 전환을 추적하지 않는 목표로 운영중이라 매출 연결이 안 되는 경우입니다. 실제 구매 전환을 추적하는 소재만 ROAS가 표시됩니다.</div>
+        <div class="section-note" style="margin-top:10px;">※ 계정 소재 구성이 매일 바뀌고 있어요. "일시정지" 표시 소재는 확인 시점(8/5) 기준이며, 수치는 마지막으로 확인 가능했던 누적 구간 기준입니다. 신규 소재(0731 MELTING SKIRT, 0730 ATTENTION PANTS 등)는 최근 투입되어 데이터가 아직 적거나 없을 수 있어요.</div>
       </section>
     </div>
 
@@ -348,8 +397,46 @@
 
     <!-- ===== 소재 라이브러리 ===== -->
     <div class="view" id="view-creatives">
-      <div class="section-head"><div class="section-title">운영중 소재 라이브러리</div><div class="section-note">현재 집행중인 ACTIVE 광고 전체 23개 · 7/28–8/3 누적 성과</div></div>
+      <div class="section-head"><div class="section-title">소재 라이브러리</div><div class="section-note">전체 27개 (집행중 6개 · 일시정지 21개) · 8/5 확인 기준</div></div>
       <div class="creative-grid" id="creativeGrid"></div>
+    </div>
+
+    <!-- ===== W컨셉 협력 ===== -->
+    <div class="view" id="view-wconcept">
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-label">누적 광고비</div><div class="kpi-value">₩74,568</div><div class="kpi-sub">8/5 첫 집행일 기준</div></div>
+        <div class="kpi-card"><div class="kpi-label">노출수</div><div class="kpi-value">11,881</div><div class="kpi-sub">CPM 평균 ₩6,276</div></div>
+        <div class="kpi-card"><div class="kpi-label">클릭수</div><div class="kpi-value">926</div><div class="kpi-sub">평균 CTR 7.79%</div></div>
+        <div class="kpi-card"><div class="kpi-label">캠페인 기간</div><div class="kpi-value">~8/7 10시</div><div class="kpi-sub warn">이후 할인율 재확인 후속 캠페인 대기중</div></div>
+      </div>
+
+      <section>
+        <div class="section-head"><div class="section-title">소재별 성과</div><div class="section-note">8/5 집행 시작 · 광고비 높은 순</div></div>
+        <div class="creative-grid" id="wconceptGrid"></div>
+      </section>
+
+      <section>
+        <div class="section-note">※ 계정명: 로브로브 X W컨셉 협력. 소재명에 "~8/7 10시" 표기가 있는 트래픽 캠페인이 현재 집행중이며, 8/7 오전 10시 할인율 재확인 후 이어지는 후속 캠페인이 이미 세팅되어 대기(CAMPAIGN_PAUSED) 상태입니다.</div>
+      </section>
+    </div>
+
+    <!-- ===== 29CM 협력 ===== -->
+    <div class="view" id="view-cm29">
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-label">누적 광고비</div><div class="kpi-value">₩0</div><div class="kpi-sub">집행 이력 없음</div></div>
+        <div class="kpi-card"><div class="kpi-label">노출수</div><div class="kpi-value">0</div><div class="kpi-sub">-</div></div>
+        <div class="kpi-card"><div class="kpi-label">클릭수</div><div class="kpi-value">0</div><div class="kpi-sub">-</div></div>
+        <div class="kpi-card"><div class="kpi-label">소재 상태</div><div class="kpi-value">4개 전체 정지</div><div class="kpi-sub warn">ADSET_PAUSED</div></div>
+      </div>
+
+      <section>
+        <div class="section-head"><div class="section-title">세팅된 소재</div><div class="section-note">데일리 브리즈 밴딩 팬츠 · 전량 미집행</div></div>
+        <div class="creative-grid" id="cm29Grid"></div>
+      </section>
+
+      <section>
+        <div class="section-note">※ 계정명: Collaborative Ads_29CM_lovlov. 0724 데일리 브리즈 밴딩 팬츠 소재 4종(1:1 이미지 2종, 9:16 영상 2종)이 세팅되어 있으나, 전체 집행 기간을 통틀어 지출·노출 데이터가 없어 실제로는 한 번도 온에어되지 않은 것으로 보입니다.</div>
+      </section>
     </div>
 
     <!-- ===== 용어 정리 ===== -->
@@ -397,68 +484,76 @@ document.querySelectorAll('.tab').forEach(tab=>{
 });
 
 // ---------- Shared data ----------
-const days = ['7/28','7/29','7/30','7/31','8/1','8/2','8/3'];
-const spend = [432467,394861,353190,203013,250225,267946,222494];
-const imps  = [42225,34712,33374,18960,20490,22902,19290];
-const clicks= [2642,2196,2190,1347,1399,1818,1308];
+const days = ['7/30','7/31','8/1','8/2','8/3','8/4','8/5'];
+const spend = [353190,203013,250225,267946,222517,148727,55872];
+const imps  = [33374,18960,20490,22902,19293,14310,5309];
+const clicks= [2190,1347,1399,1818,1308,1141,393];
 
 const creatives = [
-{name:"0731 MELTING SKIRT 4:5 이미지 (1)", type:"IMAGE", imp:450, clk:14, spend:6163, cpm:13696, ctr:3.11,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/761114204_122144284869089394_2771617816225652950_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=Ovgg87vyULAQ7kNvwE5Wdp0&_nc_oc=AdrZJ5_LpHpa2JxFusgEnIGaDKvx1vIX9OMIlhtZWY0nMdqi-NoiKr60SqF7nk5fi-g&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=GKJqn0BuLbFyMf7XOvpsyQ&_nc_tpa=Q5bMBQE86G7GhlmAa8_2t22Te8pR52gu9IUOjzYXZxnA_gIqYgP38qfIn11q6foU-29eQ4IMUnsNGi5FYQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFUiMDNjlzXnrJfwMVJiiZZSKpfYTSCvcHqdpQ-NuKDwA&oe=6A76FA94", roas:null},
-{name:"0731 MELTING SKIRT 4:5 이미지 (2)", type:"IMAGE", imp:806, clk:22, spend:11428, cpm:14179, ctr:2.73,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/760358370_122144284071089394_9159127362416985346_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=5Qcc5WWSziQQ7kNvwFVICtI&_nc_oc=AdptonXFAWJgTvAvVJbTRclaJpM6-ktUtsCMm7850fTVYo2kuBsDZVXgsLrGnCZtUEs&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=GKJqn0BuLbFyMf7XOvpsyQ&_nc_tpa=Q5bMBQGnxfwD_Rv5wiTXNhrEchnwLYeP3UiOzr_lfXxOuGweKyuLsgoh8-tWFmEIlgwjn7mSRZG0FqXJsQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFK89zyCFpmwRp_k3C7LFdeSoODAD6gKgRH-fCSy166VQ&oe=6A76F692", roas:null},
-{name:"0730 ATTENTION PANTS 4:5 이미지", type:"IMAGE", imp:2518, clk:100, spend:33528, cpm:13315, ctr:3.97,
- thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t45.1600-4/758835264_27599852733007854_1581360862658867764_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=HuXD_vErgvIQ7kNvwHn8s79&_nc_oc=AdqxfbKkA4MsBzcPDUgDnzNPi4pZxy3dCzWqorF-A_cWw1jmLwUr_O4Jb4E3m_Mxzr8&_nc_zt=1&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=GKJqn0BuLbFyMf7XOvpsyQ&_nc_tpa=Q5bMBQEm-9hGlzNN9658yvuXWT18YV6l9PFzq7ZkfWuLa_X9XYxNHjUeKE8FSY9VZv65i5miG2NyAWf44Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGJLX908pU7g_WySd0lr2cdSj8W5ZzAWcaGUs_AAiGBpQ&oe=6A76FDED", roas:null},
-{name:"0727 ATTENTION PANTS 9:16 영상 (1)", type:"VIDEO", imp:2843, clk:104, spend:45614, cpm:16044, ctr:3.66,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/759252344_1717635109357077_5606103433042649096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=12iqJtCaw00Q7kNvwFPAAVe&_nc_oc=AdpDIvTdnIyJWS9CwmwMHmQq-9WIC6Ck864sxSTb2V41Nic6hNjMUgSUzzeNeBl9oBI&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHgoX5UMzj7IXCiXx0id4BAlKvfIl0YqwJzfpNRKbEbPdGbowkx6b5aX5nVghMN4JPBVoEFvpn5AA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFYpfZl4y-7oSn_rKcPXj-EDe2zrh9dJK7ofXqzM8xGlQ&oe=6A770D13", roas:1.93},
-{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (1)", type:"VIDEO", imp:3743, clk:359, spend:35245, cpm:9416, ctr:9.59,
- thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/759040352_2028142844728614_7358908442168798181_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=JrVPNMXKow8Q7kNvwFwjJ5D&_nc_oc=AdpFqQV0wykkYb2pzPM49hiJpHXWiKjd7Sa-7sXqMZBxVYuP5rn5pikymVzbq2E-OlQ&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFx3FW9RQ71LJoUZBaxCztZYEoTeZPJLcr0cBzEf-laDKL7BhdVMduftz575DAS0_1jZTExL5TU6Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQE7MSOaMlaCIEPYdXjC7dZnwopi2wv-gAzJWGdFFLqkzg&oe=6A7714F5", roas:null},
-{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (2)", type:"VIDEO", imp:4908, clk:650, spend:38562, cpm:7857, ctr:13.24,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/759319934_2972731193072714_7310750999584525302_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=hZNqrD79FdAQ7kNvwGA_YbG&_nc_oc=AdqVemn11jzBkluJUfF3m6fGsDRMwKpiSYkWp9pcIfF2nfjAeCSYZbfdJniUWGP1eu0&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEFvha4ka-_VbkWWexw-nkGK8oW6DuF7cOARb2MquHeLD1x_Dx17_47t_h0efi6Tsbuz5z_8kS0SA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFj_Qyz6Xs7yp_wOMlMGhRweR-Gp3iuL4CXE8xuuJK-3A&oe=6A76EE65", roas:null},
-{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (3)", type:"VIDEO", imp:4196, clk:427, spend:37576, cpm:8955, ctr:10.18,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/756525112_1738440030616105_2056967438033874801_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=zNjkWm_7LWwQ7kNvwGpWOLE&_nc_oc=AdqbjqJnd4g2AjuB_ZJ5iIC_2y5mQrkzwQTyUdtQ2aJZ3wgj7vdoAKfaDmRhw_S7ogw&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQG5f83YmOwDZJojZgeDvjmfm8AOXvBaxrGth7CVei8x1BNRQx0T4aK1RSCAcWMf4KB6puKrdCIfIQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHqVuj4PKYx_FWeZdde9f5xHbZnyQLJPjBq8J32lOONlA&oe=6A77025F", roas:null},
-{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (4)", type:"VIDEO", imp:2980, clk:333, spend:38339, cpm:12865, ctr:11.17,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/757862738_1937353650266503_5266311181218408792_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=dSp6vyQxIkwQ7kNvwFDksmJ&_nc_oc=AdpuFwkea62uDMlLJw4D2oeY6nJD1JhJ_g3AJvp5iXPl--NgHknCByMzD6v9d0jvyOY&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHg4ociBmspAnQsM9udS_bjECB6m93fje5CobraCpQjZH_o4DAFw58f75Xq--DneUeVHe1aL75ZVQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQEo8SLgHBPm91quWsZ07Py210dVr6hMp7sEtKglBrBtpA&oe=6A77109C", roas:null},
-{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 4:5 이미지 (1)", type:"IMAGE", imp:5026, clk:372, spend:36852, cpm:7332, ctr:7.4,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756302114_122143921581089394_6967290961302818170_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=rSGvxRz6wYgQ7kNvwE2ctll&_nc_oc=AdoMlrqB5k-NH3Nfh1IZrlRqXLsXfinigkk49Ceiey3zHx7enMydzBQUXJ4G33vNntA&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHmZSFum4WvGOGkYdSOplPNpWgDv2VMSOV0zA2ZmThTPCplfL0l5EGb5qljt0H6h63SLlcvPKvt_A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQHBAz6120qkQ41Cv43cy5UuUp9pc-jOoRcJNQ7SZwFWkg&oe=6A770B24", roas:null},
-{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 4:5 이미지 (2)", type:"IMAGE", imp:5355, clk:448, spend:37152, cpm:6938, ctr:8.37,
- thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t45.1600-4/756535299_122143921209089394_8331410923670730607_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=ycw56yAbH_wQ7kNvwGRgt0i&_nc_oc=AdozyydPNxvgyWgJppo_Nlp_A4xqyct6AZE9E0dwHfMHYWi7lByeG2DZ3f-Hwk9HhRU&_nc_zt=1&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGSmfHHuIEHUqrqntO9dWSU46GrqYmIb5On_nk9ca7FpxGEHs-SSxH3YKbvQcy3wVrAiZcSUv5CKA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQHRN8VVx_xIqeLV6iXT16lIaOk6KvT_7J9BHt-d5CG4qA&oe=6A76E720", roas:null},
-{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (1)", type:"VIDEO", imp:6416, clk:729, spend:46546, cpm:7255, ctr:11.36,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/757656579_1424186546425962_2925025174995790326_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=jxOcGXDC_f4Q7kNvwGTt9t9&_nc_oc=Adojh5K65Q9K9zbNlU2RkmKav3RK-P2j6ekiYXKC__RaxQcIH7l02VQal5pIhzXUi_w&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFhf1sUngmJkslEq9EGeWoPAWUtM2WnehZEGt73rQwd_jYSz6_Awt_Z9CinM8l1Sbyh7UMU5OS3pg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQG4zIAbgu_dLefWwvW966xDxPgk81NMOCam5MYe0KfH-Q&oe=6A76EAE5", roas:null},
-{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (2)", type:"VIDEO", imp:4513, clk:378, spend:37044, cpm:8208, ctr:8.38,
- thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/758863488_1571948114709297_2850834133745494727_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=Ex7hJnZHKe8Q7kNvwEpe3B4&_nc_oc=AdpPc2BiNbnDjrmWb8rtCAnW4SaAYNqZrdujYgNXKNyNeHOgVE6p-ACJUYwOYvQ5caw&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGzva_JK9ynD20OeyQXBzEkiHWJBfWA8P1kFqM_aIMfwp6ysTprOEoOQB1cJ3ufkJ5uNWzATTX3iA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQE82cIlYYUeyZy2Z6uni1UtAUXvbMJ_KskCh_VB9GcLww&oe=6A770EBE", roas:null},
-{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (3)", type:"VIDEO", imp:3965, clk:312, spend:37473, cpm:9451, ctr:7.87,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/756342021_1058669839841362_2130887239304604842_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=qJmoOk_tmK4Q7kNvwGuPpV7&_nc_oc=Ado-enVVPgZh9nXsMlLYL8VkZ-W9pC8GpoRMvpTRuhB5HU3Hx2bLOa5i6aVBoyiKbQM&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEXrtf9i88kZEgg1K00kHwhpYZtVnaIU_qecN6RYktsHQGWzJauwZmnijvU4zyx_MPdHH2wITetqw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHCY_6kuJZ0x6WI0OoFVncH4G6MWbKgWxHALK02x6CVvw&oe=6A770749", roas:null},
-{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 4:5 이미지 (1)", type:"IMAGE", imp:6177, clk:521, spend:35899, cpm:5812, ctr:8.43,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756495833_122143919469089394_3413472225693387257_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=dPz1SvTL4ssQ7kNvwHDX3Jj&_nc_oc=Ador_b7BLboexg_m3L2ZpCapcz2zb-YoRfyqNrMJSHs-juFv3SiUqNRXOxc1-lgX1CQ&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGfLjDyQPQ5ldWhinve88qAaNCN4b8VA7ffQonM3Zy70xLlboheaqcFDw7jnH5-Vga9SaiDqbLt6g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGSrZ0tJU8dHVi_-uOKIdAqAHogMi3fNafJ6BedfAYtfA&oe=6A77189E", roas:null},
-{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (4)", type:"VIDEO", imp:4309, clk:388, spend:36956, cpm:8576, ctr:9.0,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/757000048_1861099135154186_6640014851925944877_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=xE5DPPz_yNsQ7kNvwFrFYIR&_nc_oc=AdqKeF4DAdjXOVdBrmiIp9ujQUju1Ft4V7jo5sLO0cRD6UEjiKn4J_ukTl5D7BBteow&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHewK0sKxqN4YhXEkD62IbK1-X1NN6PMIJkGyUh_St_ETT81Nvr2OT_OjLIHDQhgqXvxzdk9EtIYQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHgD6kFyQlmmTH3bkCRekJy47Ox4XeUbOLd-0dzH4vKhw&oe=6A76FB5C", roas:null},
-{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 4:5 이미지 (2)", type:"IMAGE", imp:9403, clk:929, spend:47184, cpm:5018, ctr:9.88,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756517964_122143919607089394_8298293721956687118_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=6y0XbmKN7s0Q7kNvwExRyad&_nc_oc=AdpxyBToyLGOElBv3wSYHIk6_wZj0yHdRj1Odup5vclgLzhpaTRgNx2o8_JXoQJBb1Y&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH-dEQR-KzUKScHp7CRqlL_MCdCOp3kXjTvAAMN0OLTu7Mpe2iLB--Hxrt9wJ_xkki3xskox-tgGA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGErX5J7lo07RDgJcmwNwmGfYE26c44X4jy4YPzQHDf_g&oe=6A771ACC", roas:null},
-{name:"0727 ATTENTION PANTS 9:16 영상 (2)", type:"VIDEO", imp:4395, clk:169, spend:59646, cpm:13571, ctr:3.85,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/755151826_1939260920111191_3276132279754017170_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=ZBYwMZrf0xYQ7kNvwGqRpXO&_nc_oc=Adot3xUKybS-6Q-yjBLqZ3FD35bqOkeOPnWB3hoCupeodZmXF2SVYqI1PykXah910vE&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQG_x1LvpeoAA9lEamoWYTRu_QU5jDEZjcpReRquX4slhFaXCMrOKyECUggpCZLpP_lqowRr3zg08w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQEMrBRhYlkNwnTNVfl1W5d03S8MK5r_RzkJ_D6ucHI2bQ&oe=6A76FFFE", roas:6.03},
-{name:"0727 AIR FLOW SET-UP 9:16 영상", type:"VIDEO", imp:6139, clk:215, spend:127703, cpm:20802, ctr:3.5,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/756223597_1762804828050899_1193306818060272011_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=Vp1d7t0h80oQ7kNvwGqxNay&_nc_oc=Adpq4NLZLFUQcREtub49SYlBbKNluEV9hovOMtJ1QbMM0P04kQfW1DU0ys-gUGQrfX4&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH6XmYFonKHNs72qggx7q8C8_AdAAjiS3njH9fd7DvLjLXm8b6Hhx1QkgflKCXI8wmjyX4y0r9LrA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHrkyU-ti5awWyg-Mt7c20UzK_mYy_SwiXkBQkaWLUi0Q&oe=6A76F71B", roas:5.9},
-{name:"0727 AIR FLOW SET-UP 4:5 이미지 (1)", type:"IMAGE", imp:8909, clk:410, spend:131680, cpm:14781, ctr:4.6,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756518029_122143911747089394_3641316481094934446_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=2CeLLArVTtAQ7kNvwEDxmjr&_nc_oc=Adpg6S7H8OjIbV2A6RifFkuDIqwr0QYfr7ncBmZbZf6xgSM7ZGP80EzMwQCr6z8TM_Y&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEPcuBTlATc6ggTFKWa6mRZgbuI2gEYClvNz7P3gN8xEZiBe7Z7iqxg0XJeeCcaDPhi4K_HfqfjzQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQF8STlPFuvvSwjwD16jFN92UmNN4f-T5ernlN1IxxXxmw&oe=6A76EDC3", roas:3.4},
-{name:"0727 AIR FLOW SET-UP 4:5 이미지 (2)", type:"IMAGE", imp:4575, clk:203, spend:83145, cpm:18174, ctr:4.44,
- thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/758835266_122143911477089394_5813590701601279511_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=y8u7f8_YSUAQ7kNvwFlikNx&_nc_oc=Adpo_ODRAiHDbZWXh1eELvAu-00AGzB7Wq9BojSWqYHqMJH8wTQd2EqipzzJI94VSnw&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH5ZFmnwXkqhc7JwnRjgqcUEtcSOPgZuSImdO3y_kSAT8vkC3xkdubpuHaEbAQkLbQOL9eqx15TIg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFRMduquOdiQdLIFdsdn8QBxhHeioyt7qbaudhjHbSK9g&oe=6A771A8B", roas:4.77},
-{name:"에어플로우셋업_0720(1)", type:"SHARE", imp:7314, clk:417, spend:145467, cpm:19889, ctr:5.7,
- thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=GPmk-XXt_ScQ7kNvwEccTp5&_nc_oc=Adp7-Jf1VghWz8KAe9gDngTcVDXqVfT2qkU_jlIs1cWRwmJ0FrMKS33Z-TnkE3X_o5U&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFizf9BPy7nmT5TPYb0qrsB1pppAM3--yPGXhzTRWCRvTe0W6i67ZG7uEyl6U1GKtHQUcMkeHAWRw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_AQGOW2aLl16PffUxKdJGJyMxJUVwrmK3nFi2s6fYpk91oA&oe=6A771302", roas:2.91},
-{name:"에어플로우셋업_휴가코디", type:"VIDEO", imp:656, clk:20, spend:13094, cpm:19960, ctr:3.05,
- thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/736172703_2131177237457571_3455462535789121756_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=jfvgAmPatM0Q7kNvwHoA7xD&_nc_oc=AdqvHGVunbKehDgvm7Jb0meGstmysr0iC6YL2ZTY5o7Tlbnmz28Imk_7OuikXqErQlY&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGWDVuUxAqzrmnXr2QUmDxeTVTB5PPzgiW201vdxWNfqxsOcCk6ucZra7lzMBs1DqKWQ-Sw2UTMzw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFUreFs6Ue4b_QNjjQXAiqw_hGTvIE7z9VdrTou-VMCTQ&oe=6A770435", roas:39.58},
-{name:"에어플로우_투박한바람막이", type:"SHARE", imp:6813, clk:495, spend:115492, cpm:16952, ctr:7.27,
- thumb:"https://external-sea1-1.xx.fbcdn.net/emg1/v/t13/13733550255160339912?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKSm7e2ybj16g0OIITLpu6rZ0gp7gFqdr6CY-sloqICs4w99mh89mwxpt__RXH8POQ7P7nnmJJNxSO-OvRvK4J57H5La6BG2BFZ0n_jR46bOxJgAR0aZj7jXu0nT14YUMy4ZNv0DxkA-DmdQV12mY1r&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_oc=AdqOqjV9GN7XTQp4Xmwcj-clC_waBv1JHb80jMFdbu2iD1A42VVgiOYxd6vbUYtGZEk&ccb=13-1&oh=06_Q3_BAQAlQhUtWcmWTArqp1dP67HE6RlCinpAnjIBIOX-9hjv&oe=6A731455&_nc_sid=58080a", roas:4.13},
+{name:"0731 MELTING SKIRT 4:5 이미지 (1)", type:"IMAGE", imp:14, clk:6163, spend:450, cpm:13696, ctr:3.11,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/761114204_122144284869089394_2771617816225652950_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=Ovgg87vyULAQ7kNvwE5Wdp0&_nc_oc=AdrZJ5_LpHpa2JxFusgEnIGaDKvx1vIX9OMIlhtZWY0nMdqi-NoiKr60SqF7nk5fi-g&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=GKJqn0BuLbFyMf7XOvpsyQ&_nc_tpa=Q5bMBQE86G7GhlmAa8_2t22Te8pR52gu9IUOjzYXZxnA_gIqYgP38qfIn11q6foU-29eQ4IMUnsNGi5FYQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFUiMDNjlzXnrJfwMVJiiZZSKpfYTSCvcHqdpQ-NuKDwA&oe=6A76FA94", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"0731 MELTING SKIRT 4:5 이미지 (2)", type:"IMAGE", imp:22, clk:11428, spend:806, cpm:14179, ctr:2.73,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/760358370_122144284071089394_9159127362416985346_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=5Qcc5WWSziQQ7kNvwFVICtI&_nc_oc=AdptonXFAWJgTvAvVJbTRclaJpM6-ktUtsCMm7850fTVYo2kuBsDZVXgsLrGnCZtUEs&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=GKJqn0BuLbFyMf7XOvpsyQ&_nc_tpa=Q5bMBQGnxfwD_Rv5wiTXNhrEchnwLYeP3UiOzr_lfXxOuGweKyuLsgoh8-tWFmEIlgwjn7mSRZG0FqXJsQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFK89zyCFpmwRp_k3C7LFdeSoODAD6gKgRH-fCSy166VQ&oe=6A76F692", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"0730 ATTENTION PANTS 4:5 이미지", type:"IMAGE", imp:100, clk:33528, spend:2518, cpm:13315, ctr:3.97,
+ thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t45.1600-4/758835264_27599852733007854_1581360862658867764_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=HuXD_vErgvIQ7kNvwHn8s79&_nc_oc=AdqxfbKkA4MsBzcPDUgDnzNPi4pZxy3dCzWqorF-A_cWw1jmLwUr_O4Jb4E3m_Mxzr8&_nc_zt=1&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=GKJqn0BuLbFyMf7XOvpsyQ&_nc_tpa=Q5bMBQEm-9hGlzNN9658yvuXWT18YV6l9PFzq7ZkfWuLa_X9XYxNHjUeKE8FSY9VZv65i5miG2NyAWf44Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGJLX908pU7g_WySd0lr2cdSj8W5ZzAWcaGUs_AAiGBpQ&oe=6A76FDED", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"0727 ATTENTION PANTS 9:16 영상 (1)", type:"VIDEO", imp:3029, clk:109, spend:46679, cpm:15411, ctr:3.6,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/759252344_1717635109357077_5606103433042649096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=12iqJtCaw00Q7kNvwFPAAVe&_nc_oc=AdpDIvTdnIyJWS9CwmwMHmQq-9WIC6Ck864sxSTb2V41Nic6hNjMUgSUzzeNeBl9oBI&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHgoX5UMzj7IXCiXx0id4BAlKvfIl0YqwJzfpNRKbEbPdGbowkx6b5aX5nVghMN4JPBVoEFvpn5AA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFYpfZl4y-7oSn_rKcPXj-EDe2zrh9dJK7ofXqzM8xGlQ&oe=6A770D13", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (1)", type:"VIDEO", imp:359, clk:35245, spend:3743, cpm:9416, ctr:9.59,
+ thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/759040352_2028142844728614_7358908442168798181_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=JrVPNMXKow8Q7kNvwFwjJ5D&_nc_oc=AdpFqQV0wykkYb2pzPM49hiJpHXWiKjd7Sa-7sXqMZBxVYuP5rn5pikymVzbq2E-OlQ&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFx3FW9RQ71LJoUZBaxCztZYEoTeZPJLcr0cBzEf-laDKL7BhdVMduftz575DAS0_1jZTExL5TU6Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQE7MSOaMlaCIEPYdXjC7dZnwopi2wv-gAzJWGdFFLqkzg&oe=6A7714F5", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (2)", type:"VIDEO", imp:650, clk:38562, spend:4908, cpm:7857, ctr:13.24,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/759319934_2972731193072714_7310750999584525302_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=hZNqrD79FdAQ7kNvwGA_YbG&_nc_oc=AdqVemn11jzBkluJUfF3m6fGsDRMwKpiSYkWp9pcIfF2nfjAeCSYZbfdJniUWGP1eu0&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEFvha4ka-_VbkWWexw-nkGK8oW6DuF7cOARb2MquHeLD1x_Dx17_47t_h0efi6Tsbuz5z_8kS0SA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFj_Qyz6Xs7yp_wOMlMGhRweR-Gp3iuL4CXE8xuuJK-3A&oe=6A76EE65", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (3)", type:"VIDEO", imp:427, clk:37576, spend:4196, cpm:8955, ctr:10.18,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/756525112_1738440030616105_2056967438033874801_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=zNjkWm_7LWwQ7kNvwGpWOLE&_nc_oc=AdqbjqJnd4g2AjuB_ZJ5iIC_2y5mQrkzwQTyUdtQ2aJZ3wgj7vdoAKfaDmRhw_S7ogw&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQG5f83YmOwDZJojZgeDvjmfm8AOXvBaxrGth7CVei8x1BNRQx0T4aK1RSCAcWMf4KB6puKrdCIfIQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHqVuj4PKYx_FWeZdde9f5xHbZnyQLJPjBq8J32lOONlA&oe=6A77025F", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 9:16 영상 (4)", type:"VIDEO", imp:333, clk:38339, spend:2980, cpm:12865, ctr:11.17,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/757862738_1937353650266503_5266311181218408792_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=dSp6vyQxIkwQ7kNvwFDksmJ&_nc_oc=AdpuFwkea62uDMlLJw4D2oeY6nJD1JhJ_g3AJvp5iXPl--NgHknCByMzD6v9d0jvyOY&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHg4ociBmspAnQsM9udS_bjECB6m93fje5CobraCpQjZH_o4DAFw58f75Xq--DneUeVHe1aL75ZVQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQEo8SLgHBPm91quWsZ07Py210dVr6hMp7sEtKglBrBtpA&oe=6A77109C", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 4:5 이미지 (1)", type:"IMAGE", imp:372, clk:36852, spend:5026, cpm:7332, ctr:7.4,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756302114_122143921581089394_6967290961302818170_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=rSGvxRz6wYgQ7kNvwE2ctll&_nc_oc=AdoMlrqB5k-NH3Nfh1IZrlRqXLsXfinigkk49Ceiey3zHx7enMydzBQUXJ4G33vNntA&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHmZSFum4WvGOGkYdSOplPNpWgDv2VMSOV0zA2ZmThTPCplfL0l5EGb5qljt0H6h63SLlcvPKvt_A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQHBAz6120qkQ41Cv43cy5UuUp9pc-jOoRcJNQ7SZwFWkg&oe=6A770B24", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 에어리 스트라이프 셔츠 4:5 이미지 (2)", type:"IMAGE", imp:448, clk:37152, spend:5355, cpm:6938, ctr:8.37,
+ thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t45.1600-4/756535299_122143921209089394_8331410923670730607_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=ycw56yAbH_wQ7kNvwGRgt0i&_nc_oc=AdozyydPNxvgyWgJppo_Nlp_A4xqyct6AZE9E0dwHfMHYWi7lByeG2DZ3f-Hwk9HhRU&_nc_zt=1&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGSmfHHuIEHUqrqntO9dWSU46GrqYmIb5On_nk9ca7FpxGEHs-SSxH3YKbvQcy3wVrAiZcSUv5CKA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQHRN8VVx_xIqeLV6iXT16lIaOk6KvT_7J9BHt-d5CG4qA&oe=6A76E720", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (1)", type:"VIDEO", imp:6480, clk:753, spend:45542, cpm:7028, ctr:11.62,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/757656579_1424186546425962_2925025174995790326_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=jxOcGXDC_f4Q7kNvwGTt9t9&_nc_oc=Adojh5K65Q9K9zbNlU2RkmKav3RK-P2j6ekiYXKC__RaxQcIH7l02VQal5pIhzXUi_w&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFhf1sUngmJkslEq9EGeWoPAWUtM2WnehZEGt73rQwd_jYSz6_Awt_Z9CinM8l1Sbyh7UMU5OS3pg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQG4zIAbgu_dLefWwvW966xDxPgk81NMOCam5MYe0KfH-Q&oe=6A76EAE5", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (2)", type:"VIDEO", imp:378, clk:37044, spend:4513, cpm:8208, ctr:8.38,
+ thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/758863488_1571948114709297_2850834133745494727_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=Ex7hJnZHKe8Q7kNvwEpe3B4&_nc_oc=AdpPc2BiNbnDjrmWb8rtCAnW4SaAYNqZrdujYgNXKNyNeHOgVE6p-ACJUYwOYvQ5caw&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGzva_JK9ynD20OeyQXBzEkiHWJBfWA8P1kFqM_aIMfwp6ysTprOEoOQB1cJ3ufkJ5uNWzATTX3iA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQE82cIlYYUeyZy2Z6uni1UtAUXvbMJ_KskCh_VB9GcLww&oe=6A770EBE", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (3)", type:"VIDEO", imp:312, clk:37473, spend:3965, cpm:9451, ctr:7.87,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/756342021_1058669839841362_2130887239304604842_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=qJmoOk_tmK4Q7kNvwGuPpV7&_nc_oc=Ado-enVVPgZh9nXsMlLYL8VkZ-W9pC8GpoRMvpTRuhB5HU3Hx2bLOa5i6aVBoyiKbQM&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEXrtf9i88kZEgg1K00kHwhpYZtVnaIU_qecN6RYktsHQGWzJauwZmnijvU4zyx_MPdHH2wITetqw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHCY_6kuJZ0x6WI0OoFVncH4G6MWbKgWxHALK02x6CVvw&oe=6A770749", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 4:5 이미지 (1)", type:"IMAGE", imp:6216, clk:552, spend:34885, cpm:5612, ctr:8.88,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756495833_122143919469089394_3413472225693387257_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=dPz1SvTL4ssQ7kNvwHDX3Jj&_nc_oc=Ador_b7BLboexg_m3L2ZpCapcz2zb-YoRfyqNrMJSHs-juFv3SiUqNRXOxc1-lgX1CQ&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGfLjDyQPQ5ldWhinve88qAaNCN4b8VA7ffQonM3Zy70xLlboheaqcFDw7jnH5-Vga9SaiDqbLt6g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGSrZ0tJU8dHVi_-uOKIdAqAHogMi3fNafJ6BedfAYtfA&oe=6A77189E", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상 (4)", type:"VIDEO", imp:388, clk:36956, spend:4309, cpm:8576, ctr:9.0,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/757000048_1861099135154186_6640014851925944877_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=xE5DPPz_yNsQ7kNvwFrFYIR&_nc_oc=AdqKeF4DAdjXOVdBrmiIp9ujQUju1Ft4V7jo5sLO0cRD6UEjiKn4J_ukTl5D7BBteow&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHewK0sKxqN4YhXEkD62IbK1-X1NN6PMIJkGyUh_St_ETT81Nvr2OT_OjLIHDQhgqXvxzdk9EtIYQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHgD6kFyQlmmTH3bkCRekJy47Ox4XeUbOLd-0dzH4vKhw&oe=6A76FB5C", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 4:5 이미지 (2)", type:"IMAGE", imp:10321, clk:1026, spend:46934, cpm:4547, ctr:9.94,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756517964_122143919607089394_8298293721956687118_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=6y0XbmKN7s0Q7kNvwExRyad&_nc_oc=AdpxyBToyLGOElBv3wSYHIk6_wZj0yHdRj1Odup5vclgLzhpaTRgNx2o8_JXoQJBb1Y&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH-dEQR-KzUKScHp7CRqlL_MCdCOp3kXjTvAAMN0OLTu7Mpe2iLB--Hxrt9wJ_xkki3xskox-tgGA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGErX5J7lo07RDgJcmwNwmGfYE26c44X4jy4YPzQHDf_g&oe=6A771ACC", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"0727 ATTENTION PANTS 9:16 영상 (2)", type:"VIDEO", imp:5173, clk:181, spend:71600, cpm:13841, ctr:3.5,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/755151826_1939260920111191_3276132279754017170_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=ZBYwMZrf0xYQ7kNvwGqRpXO&_nc_oc=Adot3xUKybS-6Q-yjBLqZ3FD35bqOkeOPnWB3hoCupeodZmXF2SVYqI1PykXah910vE&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQG_x1LvpeoAA9lEamoWYTRu_QU5jDEZjcpReRquX4slhFaXCMrOKyECUggpCZLpP_lqowRr3zg08w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQEMrBRhYlkNwnTNVfl1W5d03S8MK5r_RzkJ_D6ucHI2bQ&oe=6A76FFFE", status:"ACTIVE", pausedNote:null},
+{name:"0727 AIR FLOW SET-UP 9:16 영상", type:"VIDEO", imp:6572, clk:227, spend:135348, cpm:20595, ctr:3.45,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/756223597_1762804828050899_1193306818060272011_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=Vp1d7t0h80oQ7kNvwGqxNay&_nc_oc=Adpq4NLZLFUQcREtub49SYlBbKNluEV9hovOMtJ1QbMM0P04kQfW1DU0ys-gUGQrfX4&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH6XmYFonKHNs72qggx7q8C8_AdAAjiS3njH9fd7DvLjLXm8b6Hhx1QkgflKCXI8wmjyX4y0r9LrA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQHrkyU-ti5awWyg-Mt7c20UzK_mYy_SwiXkBQkaWLUi0Q&oe=6A76F71B", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"0727 AIR FLOW SET-UP 4:5 이미지 (1)", type:"IMAGE", imp:6972, clk:315, spend:97013, cpm:13915, ctr:4.52,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756518029_122143911747089394_3641316481094934446_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=2CeLLArVTtAQ7kNvwEDxmjr&_nc_oc=Adpg6S7H8OjIbV2A6RifFkuDIqwr0QYfr7ncBmZbZf6xgSM7ZGP80EzMwQCr6z8TM_Y&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEPcuBTlATc6ggTFKWa6mRZgbuI2gEYClvNz7P3gN8xEZiBe7Z7iqxg0XJeeCcaDPhi4K_HfqfjzQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQF8STlPFuvvSwjwD16jFN92UmNN4f-T5ernlN1IxxXxmw&oe=6A76EDC3", status:"ACTIVE", pausedNote:null},
+{name:"0727 AIR FLOW SET-UP 4:5 이미지 (2)", type:"IMAGE", imp:4923, clk:218, spend:87671, cpm:17808, ctr:4.43,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/758835266_122143911477089394_5813590701601279511_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=y8u7f8_YSUAQ7kNvwFlikNx&_nc_oc=Adpo_ODRAiHDbZWXh1eELvAu-00AGzB7Wq9BojSWqYHqMJH8wTQd2EqipzzJI94VSnw&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH5ZFmnwXkqhc7JwnRjgqcUEtcSOPgZuSImdO3y_kSAT8vkC3xkdubpuHaEbAQkLbQOL9eqx15TIg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFRMduquOdiQdLIFdsdn8QBxhHeioyt7qbaudhjHbSK9g&oe=6A771A8B", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"에어플로우셋업_0720(1)", type:"SHARE", imp:7118, clk:385, spend:137232, cpm:19280, ctr:5.41,
+ thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=GPmk-XXt_ScQ7kNvwEccTp5&_nc_oc=Adp7-Jf1VghWz8KAe9gDngTcVDXqVfT2qkU_jlIs1cWRwmJ0FrMKS33Z-TnkE3X_o5U&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFizf9BPy7nmT5TPYb0qrsB1pppAM3--yPGXhzTRWCRvTe0W6i67ZG7uEyl6U1GKtHQUcMkeHAWRw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_AQGOW2aLl16PffUxKdJGJyMxJUVwrmK3nFi2s6fYpk91oA&oe=6A771302", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"에어플로우셋업_휴가코디", type:"VIDEO", imp:727, clk:21, spend:14890, cpm:20481, ctr:2.89,
+ thumb:"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/736172703_2131177237457571_3455462535789121756_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=jfvgAmPatM0Q7kNvwHoA7xD&_nc_oc=AdqvHGVunbKehDgvm7Jb0meGstmysr0iC6YL2ZTY5o7Tlbnmz28Imk_7OuikXqErQlY&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGWDVuUxAqzrmnXr2QUmDxeTVTB5PPzgiW201vdxWNfqxsOcCk6ucZra7lzMBs1DqKWQ-Sw2UTMzw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFUreFs6Ue4b_QNjjQXAiqw_hGTvIE7z9VdrTou-VMCTQ&oe=6A770435", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"에어플로우_투박한바람막이", type:"SHARE", imp:495, clk:115492, spend:6813, cpm:16952, ctr:7.27,
+ thumb:"https://external-sea1-1.xx.fbcdn.net/emg1/v/t13/13733550255160339912?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKSm7e2ybj16g0OIITLpu6rZ0gp7gFqdr6CY-sloqICs4w99mh89mwxpt__RXH8POQ7P7nnmJJNxSO-OvRvK4J57H5La6BG2BFZ0n_jR46bOxJgAR0aZj7jXu0nT14YUMy4ZNv0DxkA-DmdQV12mY1r&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_oc=AdqOqjV9GN7XTQp4Xmwcj-clC_waBv1JHb80jMFdbu2iD1A42VVgiOYxd6vbUYtGZEk&ccb=13-1&oh=06_Q3_BAQAlQhUtWcmWTArqp1dP67HE6RlCinpAnjIBIOX-9hjv&oe=6A731455&_nc_sid=58080a", status:"PAUSED", pausedNote:"8/5 기준 일시정지 확인 (수치는 마지막 집행 구간 기준)"},
+{name:"0731 MELTING SKIRT 4:5 이미지 (신규1)", type:"SHARE", imp:766, clk:23, spend:11922, cpm:15564, ctr:3.0,
+ thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t45.1600-4/761114204_122144284869089394_2771617816225652950_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=Gss013uCqY8Q7kNvwE7GWCk&_nc_oc=AdoxPvqQnEb3cRtGB1dMGWdJFKKX4hlpLBpHRPVIRmgRn9Fo7WdUZ2giWwBVYkdTWJk&_nc_zt=1&_nc_ht=scontent-dfw6-1.xx&edm=AEZPnVgEAAAA&_nc_gid=24XhvbUiKVGe6V4XBIVuuw&_nc_tpa=Q5bMBQE0ntnu7F8fwOSG9ZZQ_vqY0MpvCMQC37UkUwt40nGd-uUMoU2TCSD-NdAv6L7xgf8MggT01hlb-Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGztHciKLxfYCiL5jvHbJcXIvHzumDceiZtOueA7nTKow&oe=6A799D94", status:"ACTIVE", pausedNote:null},
+{name:"0731 MELTING SKIRT 4:5 이미지 (신규2)", type:"SHARE", imp:855, clk:22, spend:12593, cpm:14729, ctr:2.57,
+ thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t45.1600-4/760358370_122144284071089394_9159127362416985346_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=QNhzLiOUqIUQ7kNvwHxLn2u&_nc_oc=AdoqDpuHbquOcWujFksiBAwubGIVkyjbknEXWv-MmD-PzDOM7yHLwze-8Mndb81iy_A&_nc_zt=1&_nc_ht=scontent-dfw6-1.xx&edm=AEZPnVgEAAAA&_nc_gid=24XhvbUiKVGe6V4XBIVuuw&_nc_tpa=Q5bMBQFGl5qySUO1P7Jrk6_oAAu1X7VY4-A6I9isw4I47iH7hAjt26yfV3fctomUaLqPEmhKcVPRijSeoA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQEvL41FXwfBgKt3b1qr3VSu6f53ZId60-fPgzbP0RHqtw&oe=6A799992", status:"ACTIVE", pausedNote:null},
+{name:"0731 MELTING SKIRT 4:5 이미지 (신규3)", type:"SHARE", imp:0, clk:0, spend:0, cpm:0, ctr:0,
+ thumb:"", status:"ACTIVE", pausedNote:null},
+{name:"0730 ATTENTION PANTS 4:5 이미지 (동엽2)", type:"SHARE", imp:1056, clk:32, spend:19322, cpm:18297, ctr:3.03,
+ thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t45.1600-4/756980778_27599852769674517_6370181227349732033_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=3OtkoylaY90Q7kNvwFVdkc9&_nc_oc=AdobzTDF_yr_shD1IlKR4ubeaDl2B32BagS1xCpW96Qby1G7Db5HJIBQUg1FwFZXmeM&_nc_zt=1&_nc_ht=scontent-dfw6-1.xx&edm=AEZPnVgEAAAA&_nc_gid=24XhvbUiKVGe6V4XBIVuuw&_nc_tpa=Q5bMBQEiO_aE3ivAUk6s936hwsS0WDDzPmhFuGPBpnCnHpUDuvRoGBMXTJx3A7enqBN3yvLwk3WsJNf4-Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQF6Ijjp95-jLbwjL2Mi5CQp9pb8XZ2SCt-0KWqJ4gH1bw&oe=6A79BCB2", status:"ACTIVE", pausedNote:null},
 ];
 
 // ---------- Daily table (7/29 only, approximate split) ----------
 const dailyTop = [
-["에어플로우셋업_0720(1)",1531,68,4.44,28813,2.91,"https://scontent-atl3-2.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=qewZSAwj8CkQ7kNvwH4u-Az&_nc_oc=Adq2TpHUll7HuxlZKUybO9-d7kDKk9Djm_WuiYqssuktcqPAF9D826iFPLgD16UgWx0&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQEOA_Nt9dAvwt1TNTBfEGGlCSeA2jsfXX9CqF3vzCf3mY6uv_lCTktnovcrTmOQLEi1qXRR-QCEDQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_AQHA8VK-B3wvyHVQZ0UiIuLZOXfdmGwhfx3rUBrshFy-DQ&oe=6A70B3C2"],
-["0727 AIR FLOW SET-UP 4:5 이미지 (1)",1627,63,3.87,23272,3.4,"https://scontent-atl3-3.xx.fbcdn.net/v/t45.1600-4/756518029_122143911747089394_3641316481094934446_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=kIqK4N02cHQQ7kNvwFCqCV8&_nc_oc=AdqIHifG4TKciQOiFUV62XzWJe6NE-C8U1p57_aGJusd-yzSdb6U0Vzg21uJAS5Fo2M&_nc_zt=1&_nc_ht=scontent-atl3-3.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQES3hpfUSqZTXg9H4G7DkhjueqHcvgU1kpXzlATqM-7e1TRnkcLmxre4qLm4DBsJAE8a-L_ojov9w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGSjTpwbWUDvDaBONZISQnp2Vj1jE4fJNUaB3ZFABeXqw&oe=6A708E83"],
-["0727 AIR FLOW SET-UP 4:5 이미지 (2)",1345,46,3.42,21537,4.38,"https://scontent-atl3-1.xx.fbcdn.net/v/t45.1600-4/758835266_122143911477089394_5813590701601279511_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=PyIkrwM0WjMQ7kNvwG740ev&_nc_oc=AdqMN0wzwLxhTO47rCDuLfc_mhqhKfoyeddtplVg2CWFjG9INIDNIiPeB8q-rlL7ays&_nc_zt=1&_nc_ht=scontent-atl3-1.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQGWivUCuntc7BWellR3XPKRDFw88T4ljJlemkmL7n3Sxru41rrL0MrbdO_7axujE5-C-JwHiv8Bmw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQEWVBRpJaPwgcVkau3qDKo6H8Ho6TtBHs1XApdFbFIRuA&oe=6A70830B"],
-["0730 ATTENTION PANTS 4:5 이미지",1586,53,3.34,20691,null],
-["에어플로우셋업_휴가코디",437,15,3.43,7832,39.58,"https://scontent-atl3-1.xx.fbcdn.net/v/t15.5256-10/736172703_2131177237457571_3455462535789121756_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=8Z2VuJPuexAQ7kNvwGIpKs1&_nc_oc=Adp8HiEmR2G6oPZvLXKzhyXu88NBV4xNVf5t1rySJmU9Pwx7CJjNuqlvmuKN9ZMHjEM&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQGRq586aid2V28l6m6QdJ4ueVjeIqFyb_nEs2Gi6h96zwYzsWsRIiSjd7YGup-kbeEzEYcjj0QG9Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFqDUisLE0ljiK6FrZ5q-9M3NH8u3FhbjFsm9kXP-PhBw&oe=6A70A4F5"],
-["[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 9:16 영상",934,112,11.99,6406,null,"https://scontent-atl3-1.xx.fbcdn.net/v/t15.5256-10/757656579_1424186546425962_2925025174995790326_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=ZXAwt4yxGnkQ7kNvwFXT5M8&_nc_oc=AdpfGJErna5yYBW7U0DIXzHjVQW0uGumgNHhoAk5JQaFu10JuP1XU50FTgVznVKU6l4&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AEZPnVgEAAAA&_nc_gid=B0X0FwgtAWgkjz26fU2wbw&_nc_tpa=Q5bMBQEGQj2Y570_rGMCVsoD4W5DEeq_E3axQaP2kPLpg0DNKOQoQeY4eRRMO12HBzp2TRme_n550lKLgg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFac7x59_sLvo4qQ9OkkxgiIhdbYjSI4VOYPyxDeMi0uw&oe=6A708BA5"],
+["0727 ATTENTION PANTS 9:16 영상 (1)",1139,44,3.86,16354,6.03,"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/759252344_1717635109357077_5606103433042649096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=12iqJtCaw00Q7kNvwFPAAVe&_nc_oc=AdpDIvTdnIyJWS9CwmwMHmQq-9WIC6Ck864sxSTb2V41Nic6hNjMUgSUzzeNeBl9oBI&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQHgoX5UMzj7IXCiXx0id4BAlKvfIl0YqwJzfpNRKbEbPdGbowkx6b5aX5nVghMN4JPBVoEFvpn5AA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFYpfZl4y-7oSn_rKcPXj-EDe2zrh9dJK7ofXqzM8xGlQ&oe=6A770D13"],
+["0727 AIR FLOW SET-UP 4:5 이미지 (2)",464,29,6.25,7071,4.38,"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/758835266_122143911477089394_5813590701601279511_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=y8u7f8_YSUAQ7kNvwFlikNx&_nc_oc=Adpo_ODRAiHDbZWXh1eELvAu-00AGzB7Wq9BojSWqYHqMJH8wTQd2EqipzzJI94VSnw&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH5ZFmnwXkqhc7JwnRjgqcUEtcSOPgZuSImdO3y_kSAT8vkC3xkdubpuHaEbAQkLbQOL9eqx15TIg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQFRMduquOdiQdLIFdsdn8QBxhHeioyt7qbaudhjHbSK9g&oe=6A771A8B"],
+["0727 AIR FLOW SET-UP 4:5 이미지 (1)",410,22,5.37,5625,3.4,"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756518029_122143911747089394_3641316481094934446_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=2CeLLArVTtAQ7kNvwEDxmjr&_nc_oc=Adpg6S7H8OjIbV2A6RifFkuDIqwr0QYfr7ncBmZbZf6xgSM7ZGP80EzMwQCr6z8TM_Y&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQEPcuBTlATc6ggTFKWa6mRZgbuI2gEYClvNz7P3gN8xEZiBe7Z7iqxg0XJeeCcaDPhi4K_HfqfjzQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQF8STlPFuvvSwjwD16jFN92UmNN4f-T5ernlN1IxxXxmw&oe=6A76EDC3"],
+["에어플로우셋업_0720(1)",278,11,3.96,5309,2.91,"https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=GPmk-XXt_ScQ7kNvwEccTp5&_nc_oc=Adp7-Jf1VghWz8KAe9gDngTcVDXqVfT2qkU_jlIs1cWRwmJ0FrMKS33Z-TnkE3X_o5U&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQFizf9BPy7nmT5TPYb0qrsB1pppAM3--yPGXhzTRWCRvTe0W6i67ZG7uEyl6U1GKtHQUcMkeHAWRw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_AQGOW2aLl16PffUxKdJGJyMxJUVwrmK3nFi2s6fYpk91oA&oe=6A771302"],
+["[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 4:5 이미지 (1)",872,83,9.52,4778,null,"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756495833_122143919469089394_3413472225693387257_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=dPz1SvTL4ssQ7kNvwHDX3Jj&_nc_oc=Ador_b7BLboexg_m3L2ZpCapcz2zb-YoRfyqNrMJSHs-juFv3SiUqNRXOxc1-lgX1CQ&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQGfLjDyQPQ5ldWhinve88qAaNCN4b8VA7ffQonM3Zy70xLlboheaqcFDw7jnH5-Vga9SaiDqbLt6g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGSrZ0tJU8dHVi_-uOKIdAqAHogMi3fNafJ6BedfAYtfA&oe=6A77189E"],
+["[W컨셉] 0727 - 쏨 쿨 밴딩 팬츠 4:5 이미지 (2)",1045,115,11.0,4728,null,"https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/756517964_122143919607089394_8298293721956687118_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=6y0XbmKN7s0Q7kNvwExRyad&_nc_oc=AdpxyBToyLGOElBv3wSYHIk6_wZj0yHdRj1Odup5vclgLzhpaTRgNx2o8_JXoQJBb1Y&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=N4HNbHEj4VZAbgfPOjDgPA&_nc_tpa=Q5bMBQH-dEQR-KzUKScHp7CRqlL_MCdCOp3kXjTvAAMN0OLTu7Mpe2iLB--Hxrt9wJ_xkki3xskox-tgGA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQGErX5J7lo07RDgJcmwNwmGfYE26c44X4jy4YPzQHDf_g&oe=6A771ACC"],
 ];
 
 function fillTable(id, rows, withCpm){
@@ -466,12 +561,15 @@ function fillTable(id, rows, withCpm){
   rows.forEach(r=>{
     const tr = document.createElement('tr');
     if(withCpm){
-      const [name,imp,clk,ctr,cpm,spend,roas,thumb] = r;
-      const roasCell = roas != null ? `${roas.toFixed(2)}x` : '<span style="color:var(--ink-soft)">–</span>';
+      const [name,imp,clk,ctr,cpm,spend,status,thumb] = r;
+      const statusCell = status === 'PAUSED'
+        ? '<span style="color:var(--red);font-weight:700;">일시정지</span>'
+        : '<span style="color:var(--green);font-weight:700;">집행중</span>';
       const nameCell = thumb
         ? `<span class="name-hover">${name}<span class="hover-preview"><img src="${thumb}" alt="${name}" loading="lazy"></span></span>`
         : name;
-      tr.innerHTML = `<td>${nameCell}</td><td class="num">${imp.toLocaleString()}</td><td class="num">${clk.toLocaleString()}</td><td class="num">${ctr.toFixed(2)}%</td><td class="num">₩${cpm.toLocaleString()}</td><td class="num">₩${spend.toLocaleString()}</td><td class="num">${roasCell}</td>`;
+      if(status === 'PAUSED') tr.style.opacity = '0.7';
+      tr.innerHTML = `<td>${nameCell}</td><td class="num">${imp.toLocaleString()}</td><td class="num">${clk.toLocaleString()}</td><td class="num">${ctr.toFixed(2)}%</td><td class="num">₩${cpm.toLocaleString()}</td><td class="num">₩${spend.toLocaleString()}</td><td class="num">${statusCell}</td>`;
     }else{
       const [name,imp,clk,ctr,spend,roas,thumb] = r;
       const roasCell = roas != null ? `${roas.toFixed(2)}x` : '<span style="color:var(--ink-soft)">–</span>';
@@ -485,7 +583,7 @@ function fillTable(id, rows, withCpm){
 }
 fillTable('dailyTableBody', dailyTop, false);
 
-const weeklyRows = creatives.map(c=>[c.name,c.imp,c.clk,c.ctr,c.cpm,c.spend,c.roas,c.thumb]);
+const weeklyRows = creatives.map(c=>[c.name,c.imp,c.clk,c.ctr,c.cpm,c.spend,c.status,c.thumb]);
 fillTable('weeklyTableBody', weeklyRows, true);
 
 // ---------- Creative grid ----------
@@ -494,10 +592,17 @@ const avgCtr = creatives.reduce((a,c)=>a+c.ctr,0)/creatives.length;
 creatives.forEach(c=>{
   const div = document.createElement('div');
   div.className = 'creative-card';
+  if(c.status === 'PAUSED') div.style.opacity = '0.72';
   const badge = c.ctr >= avgCtr ? '<span class="perf-badge good">CTR 평균 이상</span>' : (c.ctr < 4 ? '<span class="perf-badge bad">CTR 저조</span>' : '');
+  const statusBadge = c.status === 'PAUSED'
+    ? '<span class="perf-badge bad" style="background:#EDEBE7;color:#6B6862;">일시정지</span>'
+    : '<span class="perf-badge good">집행중</span>';
   const roasLine = c.roas != null
     ? `<div style="font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;"><span>광고비 <b style="color:var(--ink);">₩${c.spend.toLocaleString()}</b></span><span style="color:${c.roas>=2?'var(--green)':'var(--red)'};font-weight:700;">ROAS ${c.roas.toFixed(2)}x</span></div>`
     : `<div style="font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:8px;">광고비 <b style="color:var(--ink);">₩${c.spend.toLocaleString()}</b></div>`;
+  const pausedNoteLine = c.pausedNote
+    ? `<div style="font-size:10.5px;color:var(--red);background:var(--red-soft);border-radius:6px;padding:5px 8px;margin-top:4px;">${c.pausedNote}</div>`
+    : '';
   div.innerHTML = `
     <div class="thumb-wrap">
       <img src="${c.thumb}" alt="${c.name}" loading="lazy" onerror="this.parentElement.style.background='var(--brown-soft)';this.remove();">
@@ -505,7 +610,7 @@ creatives.forEach(c=>{
     </div>
     <div class="creative-body">
       <div class="creative-title">${c.name}</div>
-      ${badge}
+      <div style="display:flex;gap:4px;flex-wrap:wrap;">${statusBadge}${badge}</div>
       <div class="creative-stats">
         <span>노출 <b>${c.imp.toLocaleString()}</b></span>
         <span>클릭 <b>${c.clk.toLocaleString()}</b></span>
@@ -513,10 +618,68 @@ creatives.forEach(c=>{
         <span>CPM <b>₩${c.cpm.toLocaleString()}</b></span>
       </div>
       ${roasLine}
+      ${pausedNoteLine}
     </div>
   `;
   grid.appendChild(div);
 });
+
+// ---------- W컨셉 협력 / 29CM 협력 ----------
+function renderSimpleCreativeGrid(gridId, list){
+  const g = document.getElementById(gridId);
+  list.forEach(c=>{
+    const div = document.createElement('div');
+    div.className = 'creative-card';
+    if(c.status === 'PAUSED') div.style.opacity = '0.72';
+    const statusBadge = c.status === 'PAUSED'
+      ? '<span class="perf-badge bad" style="background:#EDEBE7;color:#6B6862;">미집행/정지</span>'
+      : '<span class="perf-badge good">집행중</span>';
+    const statLine = c.spend > 0
+      ? `<div class="creative-stats">
+          <span>노출 <b>${c.imp.toLocaleString()}</b></span>
+          <span>클릭 <b>${c.clk.toLocaleString()}</b></span>
+          <span>CTR <b>${c.ctr.toFixed(2)}%</b></span>
+          <span>광고비 <b>₩${c.spend.toLocaleString()}</b></span>
+        </div>`
+      : `<div style="font-size:11.5px;color:var(--ink-soft);">집행 데이터 없음</div>`;
+    div.innerHTML = `
+      <div class="thumb-wrap">
+        <img src="${c.thumb}" alt="${c.name}" loading="lazy" onerror="this.parentElement.style.background='var(--brown-soft)';this.remove();">
+        <span class="type-badge">${c.type}</span>
+      </div>
+      <div class="creative-body">
+        <div class="creative-title">${c.name}</div>
+        ${statusBadge}
+        ${statLine}
+      </div>
+    `;
+    g.appendChild(div);
+  });
+}
+
+const wconceptCreatives = [
+  {name:"0805 트래픽 - 에어리 스트라이프 셔츠 (보람-1)", type:"IMAGE", imp:3293, clk:246, ctr:7.47, spend:18472, status:"ACTIVE",
+   thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t45.1600-4/764218802_122268546890265651_9029002984946800630_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=U7dpY25aOesQ7kNvwHxOJnM&_nc_oc=AdrgdBai_Q1jJ83vG6VvTKmTA9EYycApNPD4W1rWgHVZmj6Q-cLIPo8eZG1GlKnsjok&_nc_zt=1&_nc_ht=scontent-dfw6-2.xx&edm=AEZPnVgEAAAA&_nc_gid=eIihOc8CtfeQiMgXoce74w&_nc_tpa=Q5bMBQF9w6hJ9kOInPEqXcpTT4a-hD56vIrWYRLvAwnGh-m8GPKf4Hbdn0GGaz5Jg4c0l3EPYiw1_0B_FQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQEVqpF18vcjbiy1Mixv4mpqU9_30gOJpj3fM3gUBHJ8Bg&oe=6A79B498"},
+  {name:"0805 트래픽 - 에어리 스트라이프 셔츠 (보람-2)", type:"IMAGE", imp:2939, clk:210, ctr:7.15, spend:18993, status:"ACTIVE",
+   thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t45.1600-4/764218802_122268546890265651_9029002984946800630_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=U7dpY25aOesQ7kNvwHxOJnM&_nc_oc=AdrgdBai_Q1jJ83vG6VvTKmTA9EYycApNPD4W1rWgHVZmj6Q-cLIPo8eZG1GlKnsjok&_nc_zt=1&_nc_ht=scontent-dfw6-2.xx&edm=AEZPnVgEAAAA&_nc_gid=eIihOc8CtfeQiMgXoce74w&_nc_tpa=Q5bMBQEpdtGrDnWmNTHgTK7X4QMv2azPQdFfqu7un1NN4MBKPB1T048jMVBCPNyeznTEGMC9oJ1dOl6xCA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQH4XtFWq4dVGYu1BWX4FCkpPlMUHr6iMo28XZO0lgEW3g&oe=6A79B498"},
+  {name:"0805 트래픽 - 쏨 쿨 밴딩 팬츠 (보람-1)", type:"IMAGE", imp:2998, clk:283, ctr:9.44, spend:18984, status:"ACTIVE",
+   thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t45.1600-4/767108792_122268543758265651_5375750017679742855_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=vaS_W6hbylEQ7kNvwEQ8pv9&_nc_oc=AdoGILIsGbw90ie41jqawfNf6_eQX3se6KI0raxQ29j-kvs9c09OgSMmRgfRxzBCV60&_nc_zt=1&_nc_ht=scontent-dfw6-2.xx&edm=AEZPnVgEAAAA&_nc_gid=eIihOc8CtfeQiMgXoce74w&_nc_tpa=Q5bMBQEz3IUtxGkATZznPnUETmSlDGLQILlXu0jW1eOV0KWFgakV941ElSU1schIO2QOrMfjUPHGZD1Icw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQF1g0E05m-adyV8tdC_MyRqIwmhLnVB_aGbAsRFYRGqVQ&oe=6A79922C"},
+  {name:"0805 트래픽 - 쏨 쿨 밴딩 팬츠 (보람-2)", type:"IMAGE", imp:2651, clk:187, ctr:7.05, spend:18119, status:"ACTIVE",
+   thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t45.1600-4/767108792_122268543758265651_5375750017679742855_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=vaS_W6hbylEQ7kNvwEQ8pv9&_nc_oc=AdoGILIsGbw90ie41jqawfNf6_eQX3se6KI0raxQ29j-kvs9c09OgSMmRgfRxzBCV60&_nc_zt=1&_nc_ht=scontent-dfw6-2.xx&edm=AEZPnVgEAAAA&_nc_gid=eIihOc8CtfeQiMgXoce74w&_nc_tpa=Q5bMBQGjpLb_c_wyD-DAm0U6Djtch_nCCwgaXFDxfCtd4Vm3Dn2JnkaRm0VQ76eO1jcq7E2T-XOfi0mYNw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQHMtWJi3iTqk_ROxGOqB9VrL-4OE01Mpn1ZfkDsbeUE3w&oe=6A79922C"},
+];
+renderSimpleCreativeGrid('wconceptGrid', wconceptCreatives);
+
+const cm29Creatives = [
+  {name:"0724 데일리 브리즈 밴딩 팬츠 - 1:1 이미지 (보람-1)", type:"IMAGE", imp:0, clk:0, ctr:0, spend:0, status:"PAUSED",
+   thumb:"https://external-dfw5-2.xx.fbcdn.net/emg1/v/t13/6213251861926031103?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJJ7O-iublt1UMDiszAQoan_GX6yxMeH4pjKG2OLg2xszlbp_DNck_bZzFB0eV1hwM3JzyqFduP1JQjUe_EcWwxG3lKfAmx7Q19so4ClkJDS9aDHIdTow1g8C7qNrRFH0JPmDNuQ1o-dWin5zRKSJvi&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AEZPnVgEAAAA&_nc_gid=nQRvHEZt2n3oODOyWKdBmQ&_nc_oc=Adqf_vNqvaA1QYbcPLvp4gqZARCme1kDn9FnhJIES6rrDXmyu3q5dmOr2_CaU-EQq5w&ccb=13-1&oh=06_Q3_BAU77dlTZjY2ocE_s6hBmLV5HzjRgE4LBq5Z2fChM1V3X&oe=6A759E1C&_nc_sid=58080a"},
+  {name:"0724 데일리 브리즈 밴딩 팬츠 - 1:1 이미지 (보람-2)", type:"IMAGE", imp:0, clk:0, ctr:0, spend:0, status:"PAUSED",
+   thumb:"https://external-dfw5-2.xx.fbcdn.net/emg1/v/t13/16436234915660094845?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIDCmUinaeORwWzh-1Sc-2AoSXqrm6_zu3FlJNZEuafKUiL2Mnr0gLdFyU3mXwO5e0cIN8wqFJjHklMSNE7Y3XQmAN12TmCxvHGO-s3w_xBVZe6uC8d95WHot_QGpA_9Nq_7uAZBOIAhErmxv1ZSjUp&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AEZPnVgEAAAA&_nc_gid=nQRvHEZt2n3oODOyWKdBmQ&_nc_oc=AdqCvWSa5UFShYfubLzTp8cyc5nP0-HSAfm8OS8jMKq41iDpKuIjIBYdE8jx57TiX3g&ccb=13-1&oh=06_Q3_BAZ_La0rUErd5emis-tjtz69jDEAvXCTt4I9JSxq4ocyl&oe=6A7594A7&_nc_sid=58080a"},
+  {name:"0724 데일리 브리즈 밴딩 팬츠 - 9:16 영상 (보람-1)", type:"VIDEO", imp:0, clk:0, ctr:0, spend:0, status:"PAUSED",
+   thumb:"https://scontent-dfw5-1.xx.fbcdn.net/v/t15.5256-10/754824401_918860337901220_7520691520937901106_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=DY9YK7lGku4Q7kNvwEOD95B&_nc_oc=Adpj1k5KQDOd4jEnd8eBb5tw7pQvEmsebFR0NUPK37UAeDBzIUQaM4hT1pU4xZKX-gU&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=nQRvHEZt2n3oODOyWKdBmQ&_nc_tpa=Q5bMBQFrda1n1rvY2O2pmjlT5j1NE11bzfgIAMfwa5N8kZlUfpy1KPDkTEHyvkG5LW_p7zgo8CUExh6u6A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFswFXx1iBr4wsGDybrtHrquYuWcV4iU8-ic0sA8xzlIw&oe=6A79AD99"},
+  {name:"0724 데일리 브리즈 밴딩 팬츠 - 9:16 영상 (보람-2)", type:"VIDEO", imp:0, clk:0, ctr:0, spend:0, status:"PAUSED",
+   thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t15.5256-10/753970604_996376723227570_1985598008394055726_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=t6L0hlSXPskQ7kNvwEGXR6O&_nc_oc=Adr8NRDlaCsWrxNiWjdk-IM8G5wRXOc2ghek5Z8P_b11oCYec1EJA55KvW6EFazqNW4&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&edm=AEZPnVgEAAAA&_nc_gid=nQRvHEZt2n3oODOyWKdBmQ&_nc_tpa=Q5bMBQHu1VuMo1jFcX_hQamy7Ks89D2H9FFr7vJzR-P1E1eJ-UlNM7vgQ-aQ1A1Hn_WEj4h_NqQDQWhXaA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQG4xwI9si32fvIuZWB5wCat-LrI20r-dRkOd5cSs0Y-Ng&oe=6A799D2E"},
+];
+renderSimpleCreativeGrid('cm29Grid', cm29Creatives);
 
 // ---------- Charts ----------
 function barChart(id,label,data,color){
