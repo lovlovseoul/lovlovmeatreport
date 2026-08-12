@@ -278,10 +278,11 @@
       </div>
 
       <div class="section-head"><div class="section-title">로브로브 메인 상세</div><div class="section-note">전일(8/11) 기준</div></div>
-      <div class="kpi-grid">
+      <div class="kpi-grid kpi-grid-5">
         <div class="kpi-card"><div class="kpi-label">전일 광고비 소진</div><div class="kpi-value">₩32,906</div><div class="kpi-sub">8/11 기준</div><div class="kpi-delta down">▼ 12.2% <span class="vs">전일 대비</span></div></div>
         <div class="kpi-card"><div class="kpi-label">전일 노출수</div><div class="kpi-value">2,299</div><div class="kpi-sub">CPM 평균 ₩14,313</div><div class="kpi-delta down">▼ 17.3% <span class="vs">전일 대비</span></div></div>
         <div class="kpi-card"><div class="kpi-label">전일 클릭수</div><div class="kpi-value">105</div><div class="kpi-sub">CTR 4.57%</div><div class="kpi-delta down">▼ 1.9% <span class="vs">전일 대비</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">구매전환</div><div class="kpi-value">107건</div><div class="kpi-sub">누적 · 전일 3건 (지출 있는 5개 소재 합산)</div></div>
         <div class="kpi-card"><div class="kpi-label">운영중 소재 수</div><div class="kpi-value">20개+</div><div class="kpi-sub warn">신규 캠페인 대량 투입, 대부분 지출 초기 단계</div></div>
       </div>
 
@@ -397,8 +398,9 @@
 
     <!-- ===== 소재 라이브러리 ===== -->
     <div class="view" id="view-creatives">
-      <div class="section-head"><div class="section-title">소재 라이브러리</div><div class="section-note">8/7–8/9 지출 발생 7개 (집행중 4개 · 일시정지 3개) · 8/9 확인 기준</div></div>
+      <div class="section-head"><div class="section-title">소재 라이브러리</div><div class="section-note">지출 발생 5개 + 신규 대표 2개 · 구매전환 누적/전일 병기 · 8/11 확인 기준</div></div>
       <div class="creative-grid" id="creativeGrid"></div>
+      <div class="section-note" style="margin-top:14px;">※ 8/11에 "0811 ATTENTION PANTS"(9종)·"0811 MELTING SKIRT"(11종) 총 20개 소재가 신규 투입됐어요. 위에는 대표 2개만 표시했고, 나머지 18개는 아직 지출·구매전환이 발생하지 않아 목록에서 생략했습니다. 지출이 시작되면 다음 갱신에서 자동으로 포함돼요.</div>
     </div>
 
     <!-- ===== W컨셉 협력 ===== -->
@@ -492,20 +494,20 @@ const imps  = [5309,4710,6014,4621,1997,2780,2299];
 const clicks= [393,207,243,257,102,107,105];
 
 const creatives = [
-{name:"멜팅스커트_여름교복텀", type:"IMAGE", imp:3285, clk:156, spend:51211, cpm:15584, ctr:4.75,
- thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t15.5256-10/720675422_4252325108276253_9090052051701694287_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=1j_4bq5yju0Q7kNvwE7Qt-H&_nc_oc=Adp85DpH_HChr2HLO7x2JdeWUrzKS6KM8wE6Jva_A_YDVwDXn4l7wFSepnAG0VH3Fg4&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&edm=AEZPnVgEAAAA&oh=00_AQEbbNUyS8o27JrMhwKfac4XQpwHOVRt0F5w-SFdAd2GyQ&oe=6A7B021A", status:"ACTIVE", pausedNote:null},
-{name:"에어플로우셋업_0720(1)", type:"IMAGE", imp:2504, clk:152, spend:46592, cpm:18604, ctr:6.07,
- thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&oh=00_AQHA8VK-B3wvyHVQZ0UiIuLZOXfdmGwhfx3rUBrshFy-DQ&oe=6A70B3C2", status:"PAUSED", pausedNote:null},
-{name:"0730 ATTENTION PANTS 4:5 이미지 (동엽-3)", type:"IMAGE", imp:2023, clk:118, spend:31705, cpm:15672, ctr:5.83,
- thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t45.1600-4/756980778_27599852769674517_6370181227349732033_n.jpg?_nc_cat=102&ccb=1-7&oh=00_AQF6Ijjp95-jLbwjL2Mi5CQp9pb8XZ2SCt-0KWqJ4gH1bw&oe=6A79BCB2", status:"ACTIVE", pausedNote:null},
-{name:"0727 ATTENTION PANTS 9:16 영상 (1)", type:"VIDEO", imp:1435, clk:53, spend:22056, cpm:15371, ctr:3.69,
- thumb:"https://scontent-dfw6-3.xx.fbcdn.net/v/t15.5256-10/759252344_1717635109357077_5606103433042649096_n.jpg?_nc_cat=109&ccb=1-7&oh=00_AQF-srtOEblE5kSXd5ecBNI0a1SPtSgbH2fuEWqb3zuPig&oe=6A70ADD3", status:"ACTIVE", pausedNote:null},
-{name:"0727 ATTENTION PANTS 9:16 영상 (2)", type:"VIDEO", imp:1472, clk:60, spend:18723, cpm:12719, ctr:4.08,
- thumb:"https://scontent-dfw6-3.xx.fbcdn.net/v/t15.5256-10/755151826_1939260920111191_3276132279754017170_n.jpg?_nc_cat=110&ccb=1-7&oh=00_AQEWe_eQXQSBJU7OTcf7Pizx6SDvuD3AAfHfB-8URlY9Yg&oe=6A70A0BE", status:"ACTIVE", pausedNote:null},
-{name:"에어플로우셋업_휴가코디", type:"IMAGE", imp:1046, clk:31, spend:17085, cpm:16337, ctr:2.96,
- thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t15.5256-10/736172703_2131177237457571_3455462535789121756_n.jpg?_nc_cat=106&ccb=1-7&oh=00_AQFtO9IpN2S4VK3SeZ1rHczxG2E3OntEL_7HcxEm91qrOA&oe=6A706CB5", status:"PAUSED", pausedNote:null},
-{name:"0727 AIR FLOW SET-UP 4:5 이미지 (1)", type:"IMAGE", imp:867, clk:32, spend:12654, cpm:14596, ctr:3.69,
- thumb:"https://scontent-dfw6-3.xx.fbcdn.net/v/t45.1600-4/756518029_122143911747089394_3641316481094934446_n.jpg?_nc_cat=108&ccb=1-7&oh=00_AQGSjTpwbWUDvDaBONZISQnp2Vj1jE4fJNUaB3ZFABeXqw&oe=6A708E83", status:"PAUSED", pausedNote:null},
+{name:"0730 ATTENTION PANTS 4:5 이미지 (동엽-3)", type:"IMAGE", imp:394, clk:19, spend:5229, cpm:13289, ctr:4.82,
+ thumb:"https://scontent-dfw6-1.xx.fbcdn.net/v/t45.1600-4/756980778_27599852769674517_6370181227349732033_n.jpg?_nc_cat=102&ccb=1-7&oh=00_AQF6Ijjp95-jLbwjL2Mi5CQp9pb8XZ2SCt-0KWqJ4gH1bw&oe=6A79BCB2", status:"ACTIVE", pausedNote:null, purchasesTotal:4, purchasesYesterday:1},
+{name:"0727 ATTENTION PANTS 9:16 영상 (1)", type:"VIDEO", imp:687, clk:29, spend:10180, cpm:14818, ctr:4.22,
+ thumb:"https://scontent-dfw6-3.xx.fbcdn.net/v/t15.5256-10/759252344_1717635109357077_5606103433042649096_n.jpg?_nc_cat=109&ccb=1-7&oh=00_AQF-srtOEblE5kSXd5ecBNI0a1SPtSgbH2fuEWqb3zuPig&oe=6A70ADD3", status:"ACTIVE", pausedNote:null, purchasesTotal:6, purchasesYesterday:2},
+{name:"에어플로우셋업_0720(1)", type:"IMAGE", imp:0, clk:0, spend:0, cpm:0, ctr:0,
+ thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t15.5256-10/739155683_1335762798526069_1949280266417073941_n.jpg?_nc_cat=101&ccb=1-7&oh=00_AQHA8VK-B3wvyHVQZ0UiIuLZOXfdmGwhfx3rUBrshFy-DQ&oe=6A70B3C2", status:"PAUSED", pausedNote:null, purchasesTotal:23, purchasesYesterday:0},
+{name:"0727 ATTENTION PANTS 9:16 영상 (2)", type:"VIDEO", imp:907, clk:42, spend:12545, cpm:13830, ctr:4.63,
+ thumb:"https://scontent-dfw6-3.xx.fbcdn.net/v/t15.5256-10/755151826_1939260920111191_3276132279754017170_n.jpg?_nc_cat=110&ccb=1-7&oh=00_AQEWe_eQXQSBJU7OTcf7Pizx6SDvuD3AAfHfB-8URlY9Yg&oe=6A70A0BE", status:"PAUSED", pausedNote:null, purchasesTotal:9, purchasesYesterday:0},
+{name:"멜팅스커트_여름교복텀", type:"IMAGE", imp:311, clk:15, spend:4952, cpm:15922, ctr:4.82,
+ thumb:"https://scontent-dfw6-2.xx.fbcdn.net/v/t15.5256-10/720675422_4252325108276253_9090052051701694287_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=1j_4bq5yju0Q7kNvwE7Qt-H&_nc_oc=Adp85DpH_HChr2HLO7x2JdeWUrzKS6KM8wE6Jva_A_YDVwDXn4l7wFSepnAG0VH3Fg4&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&edm=AEZPnVgEAAAA&oh=00_AQEbbNUyS8o27JrMhwKfac4XQpwHOVRt0F5w-SFdAd2GyQ&oe=6A7B021A", status:"PAUSED", pausedNote:null, purchasesTotal:65, purchasesYesterday:0},
+{name:"0811 ATTENTION PANTS 4:5 이미지 (관호-1)", type:"IMAGE", imp:0, clk:0, spend:0, cpm:0, ctr:0,
+ thumb:"https://external-sea1-1.xx.fbcdn.net/emg1/v/t13/5329819473258698813?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIJQ6S-PxMCFsd5YzIHgkwE2Hj8rZXRs65LdVoENi0GBUxo_7c2oQlVUFp_D-k3Zmax9xwfIToCsJUwmJVOf3zSUyNI64_7dgj7ww92QCO3bFWrLk5bhT3WDV_U1cFXfHcAxAKFqUr5oXTLR69i5JDC&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AEZPnVgEAAAA&_nc_gid=gH-wkNHyW1OniFdr5dihaQ&_nc_oc=AdqoGNDrCrViVlpzaCIjZlUSy7KVIgVgMUm7IXox9H3pITUrzj2QLtSaPe6T4qOzHl4&ccb=13-1&oh=06_Q3_CAWEJ5rLvHNZf6dYlwe6VHRVL8kEwi63WQ5xnru1AEpr4&oe=6A7DEA47&_nc_sid=58080a", status:"ACTIVE", pausedNote:null, purchasesTotal:0, purchasesYesterday:0},
+{name:"0811 MELTING SKIRT 9:16 영상 (관호-1)", type:"VIDEO", imp:0, clk:0, spend:0, cpm:0, ctr:0,
+ thumb:"https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/768577055_1365993488977563_3932043060481635546_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=NBfr1rRzFCQQ7kNvwFopwpg&_nc_oc=Adqz6ig6UqhwoFpiKYFEGtBx0zRdrcPqTcZbyhTA-rseJS6yZz6GkSQW4lAi0JKY83s&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AEZPnVgEAAAA&_nc_gid=gH-wkNHyW1OniFdr5dihaQ&_nc_tpa=Q5bMBQJ6YXLPB7IRVATwOifFpjSyukE6bc0yeVDXlasyVIwlLYxaF8YknmKnEk1tDSKbOs06yfuowk9vaA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQFlTT-lHHVdsDyYhwuCi5dP_DH3uUL3qBkzzfOKRH5P8g&oe=6A81E524", status:"ACTIVE", pausedNote:null, purchasesTotal:0, purchasesYesterday:0},
 ];
 
 // ---------- Daily table (7/29 only, approximate split) ----------
@@ -557,9 +559,19 @@ creatives.forEach(c=>{
   const statusBadge = c.status === 'PAUSED'
     ? '<span class="perf-badge bad" style="background:#EDEBE7;color:#6B6862;">일시정지</span>'
     : '<span class="perf-badge good">집행중</span>';
-  const roasLine = c.roas != null
-    ? `<div style="font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;"><span>광고비 <b style="color:var(--ink);">₩${c.spend.toLocaleString()}</b></span><span style="color:${c.roas>=2?'var(--green)':'var(--red)'};font-weight:700;">ROAS ${c.roas.toFixed(2)}x</span></div>`
-    : `<div style="font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:8px;">광고비 <b style="color:var(--ink);">₩${c.spend.toLocaleString()}</b></div>`;
+  const spendLine = `<div style="font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:8px;">광고비 <b style="color:var(--ink);">₩${c.spend.toLocaleString()}</b></div>`;
+  const purchaseLine = c.purchasesTotal != null
+    ? `<div style="font-size:12px;padding-top:6px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+          <span style="color:var(--ink-soft);">구매전환(누적)</span>
+          <span style="font-weight:700;color:${c.purchasesTotal>0?'var(--green)':'var(--ink-soft)'};">${c.purchasesTotal}건</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span style="color:var(--ink-soft);">구매전환(전일)</span>
+          <span style="font-weight:700;color:${c.purchasesYesterday>0?'var(--green)':'var(--ink-soft)'};">${c.purchasesYesterday}건</span>
+        </div>
+      </div>`
+    : '';
   const pausedNoteLine = c.pausedNote
     ? `<div style="font-size:10.5px;color:var(--red);background:var(--red-soft);border-radius:6px;padding:5px 8px;margin-top:4px;">${c.pausedNote}</div>`
     : '';
@@ -577,7 +589,8 @@ creatives.forEach(c=>{
         <span>CTR <b>${c.ctr.toFixed(2)}%</b></span>
         <span>CPM <b>₩${c.cpm.toLocaleString()}</b></span>
       </div>
-      ${roasLine}
+      ${spendLine}
+      ${purchaseLine}
       ${pausedNoteLine}
     </div>
   `;
